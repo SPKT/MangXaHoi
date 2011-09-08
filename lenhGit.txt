@@ -1,0 +1,11 @@
+phai the nay ko biet nua. hic! Lan nay phai duoc! bun ngu qua
+git init
+git remote add origin git@github.com: SPKT/MangXaHoi.git
+git fetch
+
+
+
+git status
+git commit de hoan tat 1 phien ban.
+git merge origin master de merge giua ban hien tai trong may voi 1 ban khac.
+git push remote/origin/master
