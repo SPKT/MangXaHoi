@@ -9,3 +9,4 @@ git status
 git commit de hoan tat 1 phien ban.
 git merge origin master de merge giua ban hien tai trong may voi 1 ban khac.
 git push remote/origin/master
+hhhhhhhhh
