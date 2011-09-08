@@ -1,4 +1,4 @@
-phai the nay ko biet nua. hic!
+phai the nay ko biet nua. hic! Lan nay phai duoc! bun ngu qua
 git init
 git remote add origin git@github.com: SPKT/MangXaHoi.git
 git fetch
