@@ -1,0 +1,19 @@
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\bin\Debug\SPKTCore.dll.config
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\bin\Debug\SPKTCore.dll
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\bin\Debug\SPKTCore.pdb
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\bin\Debug\StructureMap.dll
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\bin\Debug\StructureMap.xml
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\obj\Debug\SPKTCore.dll
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\obj\Debug\SPKTCore.pdb
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\bin\Debug\Rhino.Mocks.dll
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\bin\Debug\StructureMap.AutoMocking.dll
+C:\Users\Rua\Documents\Visual Studio 2010\Projects\SPKT (3)\SPKTCore\bin\Debug\StructureMap.AutoMocking.xml
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT (3)\SPKTCore\bin\Debug\SPKTCore.dll.config
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT (3)\SPKTCore\bin\Debug\SPKTCore.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT (3)\SPKTCore\bin\Debug\SPKTCore.pdb
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT (3)\SPKTCore\bin\Debug\StructureMap.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT (3)\SPKTCore\bin\Debug\StructureMap.xml
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT (3)\SPKTCore\obj\Debug\ResolveAssemblyReference.cache
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT (3)\SPKTCore\obj\Debug\SPKTCore.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT (3)\SPKTCore\obj\Debug\SPKTCore.pdb

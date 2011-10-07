@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SPKTCore.Core
+{
+    public static class ParameterSetting
+    {
+        public const string UsernameToVerifyQueryStringName = "a";
+
+
+        public const string VerificationEmailSubject = "Xác nhận email";
+
+        public const string EmailVerificationURL = "VerifyEmail.aspx";
+
+        public const string EmailVerificationEncryptKey = "verify";
+    }
+}
