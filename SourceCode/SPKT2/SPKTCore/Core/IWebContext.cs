@@ -18,6 +18,6 @@ namespace SPKTCore.Core
 
         String UsernameToVerify { get; }
 
-        string RootUrl { get; set; }
+        string RootUrl { get; }
     }
 }

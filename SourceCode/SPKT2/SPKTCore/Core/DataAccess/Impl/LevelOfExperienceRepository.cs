@@ -60,23 +60,8 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
         }
 
-    
-        public List<LevelOfExperience> GetAllLevelOfExperienceTypes()
-        {
-            throw new NotImplementedException();
-        }
 
-        public LevelOfExperience GetLevelOfExperienceTypeByID(int LevelOfExperienceID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SaveLevelOfExperienceType(LevelOfExperience levelOfExperience)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteLevelOfExperienceType(LevelOfExperience levelOfExperience)
+        public List<LevelOfExperience> GetAllLevelOfExperience()
         {
             throw new NotImplementedException();
         }

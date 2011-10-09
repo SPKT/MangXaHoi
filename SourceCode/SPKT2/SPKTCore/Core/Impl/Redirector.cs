@@ -13,28 +13,28 @@ namespace SPKTCore.Core.Impl
 
         public void GoToAccountAccessDenied()
         {
-            Redirect("~/Account/AccessDenied.aspx");
+            Redirect("~/Accounts/AccessDenied.aspx");
             
         }
          
         public void GoToAccountRecoverPasswordPage()
         {
-            Redirect("~/Account/RecoverPassword.aspx");
+            Redirect("~/Accounts/RecoverPassword.aspx");
         }
 
         public void GoToAccountEditAccountPage()
         {
-            Redirect("~/Account/EditAccount.aspx");
+            Redirect("~/Accounts/EditAccount.aspx");
         }
 
          public void GoToAccountLoginPage()
         {
-            Redirect("~/Account/Login.aspx");
+            Redirect("~/Accounts/Login.aspx");
         }
 
         public void GoToAccountRegisterPage()
         {
-            Redirect("~/Account/Register.aspx");
+            Redirect("~/Accounts/Register.aspx");
         }
 
         public void GoToHomePage()

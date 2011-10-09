@@ -10,14 +10,15 @@ using SPKTCore.Core.DataAccess.Impl;
 namespace SPKTCore.Core.Impl
 {
     [Pluggable("Default")]
-   public class AccountService:IAccountService
+    public class AccountService : IAccountService
     {
         private IAccountRepository _accountRepository;
         private IPermissionRepository _permissionRepository;
         private IUserSession _userSession;
         private IRedirector _redirector;
         private IEmail _email;
-        
+        private IProfileService _profileService;
+
         public AccountService()
         {
             //TODO: CẤP THIẾT hic hic
@@ -31,6 +32,7 @@ namespace SPKTCore.Core.Impl
             _userSession = new UserSession();
             _redirector = new Redirector();
             _email = new Email();
+            _profileService = new ProfileService();
 
         }
 
@@ -77,6 +79,7 @@ namespace SPKTCore.Core.Impl
                         _userSession.Username = Username;
                         _userSession.CurrentUser = GetAccountByID(account.AccountID);
                         _redirector.GoToHomePage();
+
                     }
                     else
                     {
@@ -97,9 +100,16 @@ namespace SPKTCore.Core.Impl
         }
 
 
+        // lay ra 1 account theo AccountID dua vao
         public Account GetAccountByID(Int32 AccountID)
         {
             Account account = _accountRepository.GetAccountByID(AccountID);
+            Profile profile = _profileService.LoadProfileByAccountID(AccountID);
+            if (profile != null)
+            {
+                account.Profile = profile;
+            }
+
             List<Permission> permissions = _permissionRepository.GetPermissionsByAccountID(AccountID);
             foreach (Permission permission in permissions)
             {
@@ -108,5 +118,6 @@ namespace SPKTCore.Core.Impl
 
             return account;
         }
+
     }
 }

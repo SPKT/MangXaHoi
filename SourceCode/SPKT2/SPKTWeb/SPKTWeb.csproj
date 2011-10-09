@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\code\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="StructureMap">
       <HintPath>..\..\..\..\..\Desktop\Structure\deploy\StructureMap.dll</HintPath>
@@ -140,8 +143,114 @@
     <Content Include="Accounts\Picture\t_c.png" />
     <Content Include="Accounts\RecoverPassword.aspx" />
     <Content Include="Accounts\Register.aspx" />
+    <Content Include="Accounts\VerifyEmail.aspx" />
     <Content Include="AddData.aspx" />
     <Content Include="Image\CaptChaIma.aspx" />
+    <Content Include="MXH\DangkyDesign.ascx" />
+    <Content Include="MXH\Default.aspx" />
+    <Content Include="MXH\Image\bbl-body-bg.png" />
+    <Content Include="MXH\Image\bbl-body-bg_2.png" />
+    <Content Include="MXH\Image\bbl-head-bg.png" />
+    <Content Include="MXH\Image\bbl-head-bg_2.png" />
+    <Content Include="MXH\Image\block_topbg.gif" />
+    <Content Include="MXH\Image\blog.jpg" />
+    <Content Include="MXH\Image\bn2.jpg" />
+    <Content Include="MXH\Image\body-bg2.png" />
+    <Content Include="MXH\Image\body-bg2_2.png" />
+    <Content Include="MXH\Image\body_bg.jpg" />
+    <Content Include="MXH\Image\bt2.jpg" />
+    <Content Include="MXH\Image\but_razd.gif" />
+    <Content Include="MXH\Image\content_botbg.gif" />
+    <Content Include="MXH\Image\content_topbg.gif" />
+    <Content Include="MXH\Image\content_topbg_2.gif" />
+    <Content Include="MXH\Image\gray-grad.png" />
+    <Content Include="MXH\Image\main_menu_bg.jpg" />
+    <Content Include="MXH\Image\search.png" />
+    <Content Include="MXH\Image\searchbg.png" />
+    <Content Include="MXH\LoginDesign.ascx" />
+    <Content Include="MXH\RegisterPage.aspx" />
+    <Content Include="MXH\Untitled_1.aspx" />
+    <Content Include="Picture\banner.jpg" />
+    <Content Include="Picture\bg_img.png" />
+    <Content Include="Picture\blog.jpg" />
+    <Content Include="Picture\bn1.jpg" />
+    <Content Include="Picture\bn2.jpg" />
+    <Content Include="Picture\body_bg.jpg" />
+    <Content Include="Picture\bottom_h1.png" />
+    <Content Include="Picture\bottom_h2.png" />
+    <Content Include="Picture\bottom_i1.jpg" />
+    <Content Include="Picture\bottom_i2.jpg" />
+    <Content Include="Picture\box_home.png" />
+    <Content Include="Picture\bt2.jpg" />
+    <Content Include="Picture\but_over.png" />
+    <Content Include="Picture\but_razd.gif" />
+    <Content Include="Picture\but_search.png" />
+    <Content Include="Picture\but_submi_ind5.png" />
+    <Content Include="Picture\Cuoi-2.jpg" />
+    <Content Include="Picture\c_l.png" />
+    <Content Include="Picture\gallery_big1.jpg" />
+    <Content Include="Picture\gallery_big2.jpg" />
+    <Content Include="Picture\gallery_big3.jpg" />
+    <Content Include="Picture\gallery_big4.jpg" />
+    <Content Include="Picture\gallery_big5.jpg" />
+    <Content Include="Picture\gallery_big6.jpg" />
+    <Content Include="Picture\gallery_big7.jpg" />
+    <Content Include="Picture\gallery_big8.jpg" />
+    <Content Include="Picture\gallery_big9.jpg" />
+    <Content Include="Picture\Header.jpg" />
+    <Content Include="Picture\hinh.jpg" />
+    <Content Include="Picture\img1.gif" />
+    <Content Include="Picture\img2.gif" />
+    <Content Include="Picture\img21.jpg" />
+    <Content Include="Picture\img22.jpg" />
+    <Content Include="Picture\img3.gif" />
+    <Content Include="Picture\img31.jpg" />
+    <Content Include="Picture\img32.jpg" />
+    <Content Include="Picture\img33.jpg" />
+    <Content Include="Picture\img34.jpg" />
+    <Content Include="Picture\img35.jpg" />
+    <Content Include="Picture\img36.jpg" />
+    <Content Include="Picture\img37.jpg" />
+    <Content Include="Picture\img38.jpg" />
+    <Content Include="Picture\img39.jpg" />
+    <Content Include="Picture\img41.jpg" />
+    <Content Include="Picture\img_bg_ind3.png" />
+    <Content Include="Picture\input.png" />
+    <Content Include="Picture\input_ind5.png" />
+    <Content Include="Picture\logo.jpg" />
+    <Content Include="Picture\main.jpg" />
+    <Content Include="Picture\main_bg.png" />
+    <Content Include="Picture\menu.gif" />
+    <Content Include="Picture\menu1.gif" />
+    <Content Include="Picture\menu1.jpg" />
+    <Content Include="Picture\menu2.jpg" />
+    <Content Include="Picture\message_ind5.png" />
+    <Content Include="Picture\metamorph_wavesandstars_pag.jpg" />
+    <Content Include="Picture\mn1.gif" />
+    <Content Include="Picture\mn2.jpg" />
+    <Content Include="Picture\mn3.jpg" />
+    <Content Include="Picture\mn4.jpg" />
+    <Content Include="Picture\mn5.jpg" />
+    <Content Include="Picture\nen1.jpg" />
+    <Content Include="Picture\nen2.jpg" />
+    <Content Include="Picture\profile.jpg" />
+    <Content Include="Picture\project1.jpg" />
+    <Content Include="Picture\project2.jpg" />
+    <Content Include="Picture\read.png" />
+    <Content Include="Picture\rol_over_galery.png" />
+    <Content Include="Picture\scroll1.jpg" />
+    <Content Include="Picture\scroll2.jpg" />
+    <Content Include="Picture\scroll3.jpg" />
+    <Content Include="Picture\scroll4.jpg" />
+    <Content Include="Picture\scroll5.jpg" />
+    <Content Include="Picture\scroll_small.png" />
+    <Content Include="Picture\submit.png" />
+    <Content Include="Picture\textarea.png" />
+    <Content Include="Picture\timkiem.jpg" />
+    <Content Include="Picture\top_left.png" />
+    <Content Include="Picture\top_right.png" />
+    <Content Include="Picture\top_text.gif" />
+    <Content Include="Picture\t_c.png" />
     <Content Include="Register.aspx" />
     <Content Include="Style1.css" />
     <Content Include="Style2.css" />
@@ -151,7 +260,9 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -206,6 +317,13 @@
     <Compile Include="Accounts\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Accounts\VerifyEmail.aspx.cs">
+      <DependentUpon>VerifyEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\VerifyEmail.aspx.designer.cs">
+      <DependentUpon>VerifyEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddData.aspx.cs">
       <DependentUpon>AddData.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -237,6 +355,34 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="MXH\DangkyDesign.ascx.cs">
+      <DependentUpon>DangkyDesign.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH\DangkyDesign.ascx.designer.cs">
+      <DependentUpon>DangkyDesign.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MXH\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MXH\LoginDesign.ascx.cs">
+      <DependentUpon>LoginDesign.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH\LoginDesign.ascx.designer.cs">
+      <DependentUpon>LoginDesign.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="MXH\RegisterPage.aspx.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH\RegisterPage.aspx.designer.cs">
+      <DependentUpon>RegisterPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -263,12 +409,16 @@
     <None Include="Accounts\Picture\Untitled-1.psd" />
     <Content Include="StrutureMap.config" />
     <Content Include="MasterPage.Master" />
+    <None Include="Picture\Untitled-1.psd" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT %283%29\SPKTCore\SPKTCore.csproj">
+    <ProjectReference Include="..\SPKTCore\SPKTCore.csproj">
       <Project>{934FF6C8-BFA0-41B5-89F1-A8AB887E1DC3}</Project>
       <Name>SPKTCore</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

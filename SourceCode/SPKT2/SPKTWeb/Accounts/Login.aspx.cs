@@ -22,7 +22,7 @@ namespace SPKTWeb.Accounts
 
         public void DisplayMessage(string Message)
         {
-            throw new NotImplementedException();
+            lblMessage.Text = Message;
         }
 
         protected void lbRecoverPassword_Click(object sender, EventArgs e)

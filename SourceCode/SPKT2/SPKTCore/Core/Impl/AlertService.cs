@@ -72,7 +72,7 @@ namespace SPKTCore.Core.Impl
         {
             Init();
             alertMessage = "<div class=\"AlertHeader\">" + GetProfileUrl(account.UserName) +
-                           " modified their profile.</div>";
+                           " vừa mới thay đổi thông tin cá nhân.</div>";
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.ProfileModified;
             SaveAlert(alert);

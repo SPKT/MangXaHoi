@@ -14,9 +14,15 @@ namespace SPKTCore.Core.DataAccess.Impl
             conn = new Connection();
         }
         //TODO: sua ProfileAttribute thay cho PrivacyFlagType
-        public List<Domain.ProfileAttributeType> GetProfileAttributeType()
+        public List<ProfileAttributeType> GetProfileAttributeType()
         {
-            throw new NotImplementedException();
+            List<ProfileAttributeType> result = new List<ProfileAttributeType>();
+            using (SPKTDataContext spktspktDC = conn.GetContext())
+            {
+                IEnumerable<ProfileAttributeType> query = spktspktDC.ProfileAttributeTypes;
+                result = query.ToList();
+            }
+            return result;
         }
 
         public List<VisibilityLevel> GetVisibilityLevels()
@@ -29,7 +35,7 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
             return result;
         }
-
+        //trả ra list các PrivacyFlag
         public List<PrivacyFlag> GetPrivacyFlagsByProfileID(Int32 ProfileID)
         {
             List<PrivacyFlag> result = new List<PrivacyFlag>();

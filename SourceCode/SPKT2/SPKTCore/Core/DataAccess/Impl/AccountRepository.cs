@@ -55,14 +55,16 @@ namespace SPKTCore.Core.DataAccess.Impl
                            select a).FirstOrDefault();
             }
             return account;
-        }
+        } 
         public void SaveAccount(Account account)
         {
             using (SPKTDataContext spktDC = conn.GetContext())
             {
+                account.LastUpdateDate = DateTime.Now;
                 if (account.AccountID > 0)
                 {
                     spktDC.Accounts.Attach(account, true);
+                    
                 }
                 else
                 {

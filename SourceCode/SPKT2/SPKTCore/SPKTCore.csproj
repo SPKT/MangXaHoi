@@ -87,7 +87,13 @@
     <Compile Include="Core\Impl\Cryptography.cs" />
     <Compile Include="Core\Impl\Extendsion.cs" />
     <Compile Include="Core\IAlertService.cs" />
+    <Compile Include="Core\Impl\PrivacyService.cs" />
+    <Compile Include="Core\Impl\ProfileAttributeService.cs" />
+    <Compile Include="Core\Impl\ProfileService.cs" />
     <Compile Include="Core\Impl\UserSession.cs" />
+    <Compile Include="Core\IPrivacyService.cs" />
+    <Compile Include="Core\IProfileAttributeService.cs" />
+    <Compile Include="Core\IProfileService.cs" />
     <Compile Include="Core\IUserSession.cs" />
     <Compile Include="Core\IWebContext.cs" />
     <Compile Include="Core\Impl\WebContext.cs" />

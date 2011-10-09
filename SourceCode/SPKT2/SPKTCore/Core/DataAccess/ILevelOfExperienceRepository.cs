@@ -8,9 +8,9 @@ namespace SPKTCore.Core.DataAccess
 {
     public interface ILevelOfExperienceRepository
     {
-        List<LevelOfExperience> GetAllLevelOfExperienceTypes();
-        LevelOfExperience GetLevelOfExperienceTypeByID(int LevelOfExperienceID);
-        void SaveLevelOfExperienceType(LevelOfExperience levelOfExperience);
-        void DeleteLevelOfExperienceType(LevelOfExperience levelOfExperience);
+        List<LevelOfExperience> GetAllLevelOfExperience();
+        LevelOfExperience GetLevelOfExperienceByID(int LevelOfExperienceID);
+        void SaveLevelOfExperience(LevelOfExperience levelOfExperience);
+        void DeleteLevelOfExperience(LevelOfExperience levelOfExperience);
     }
 }

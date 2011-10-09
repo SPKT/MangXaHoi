@@ -20,6 +20,7 @@ namespace SPKTWeb.Accounts.Presenter
         private IAccountService _accountService;
         private IWebContext _webContext;
         private IEmail _email;
+        private IRedirector _redirector;
 
         public void Init(IRegister View)
         {
@@ -34,6 +35,7 @@ namespace SPKTWeb.Accounts.Presenter
             _accountService = new AccountService();
             _webContext = new WebContext();
             _email = new Email();
+            _redirector = new Redirector();
         }
 
         public void LoginLinkClicked()
@@ -53,6 +55,7 @@ namespace SPKTWeb.Accounts.Presenter
                     a.Email = Email;
                     a.UserName = Username;
                     a.DisplayName = a.UserName;
+                    a.CreateDate = DateTime.Now;
                     a.Password = Password.Encrypt(Username);
                    
 
@@ -77,7 +80,7 @@ namespace SPKTWeb.Accounts.Presenter
 
 
                         _email.SendEmailAddressVerificationEmail(a.UserName, a.Email);
-                       
+                        _redirector.GoToAccountLoginPage();
                     }
                 }
                 else

@@ -86,7 +86,7 @@ namespace SPKTCore.Core.Impl
                 SetInSession("LoggedIn", value);
             }
         }
-
+        //lay username từ chuỗi mã hóa trong link xác nhận mail
         public string UsernameToVerify
         {
             get
@@ -109,7 +109,7 @@ namespace SPKTCore.Core.Impl
         {
             HttpContext.Current.Session.Remove(key);
         }
-
+        // lấy giá trị key của query string
         private string GetQueryStringValue(string key)
         {
             return HttpContext.Current.Request.QueryString[key];
@@ -144,11 +144,24 @@ namespace SPKTCore.Core.Impl
             //TODO: Chua biet lam gi
             get
             {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
+                string result;
+
+                string Port = HttpContext.Current.Request.ServerVariables["SERVER_PORT"];
+                if (Port == null || Port == "80" || Port == "443")
+                    Port = "";
+                else
+                    Port = ":" + Port;
+
+                string Protocol = HttpContext.Current.Request.ServerVariables["SERVER_PORT_SECURE"];
+                if (Protocol == null || Protocol == "0")
+                    Protocol = "http://";
+                else
+                    Protocol = "https://";
+
+                result = Protocol + HttpContext.Current.Request.ServerVariables["SERVER_NAME"] +
+                    Port + HttpContext.Current.Request.ApplicationPath;
+
+                return result;
             }
         }
     }

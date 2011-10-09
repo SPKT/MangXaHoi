@@ -13,7 +13,13 @@ namespace SPKTCore.Core.Domain
         {
             get { return _permissions; }
         }
+        private Profile _profile;
 
+        public Profile Profile
+        {
+            get { return _profile; }
+            set { _profile = value; }
+        }
         public void AddPermission(Permission permission)
         {
             _permissions.Add(permission);

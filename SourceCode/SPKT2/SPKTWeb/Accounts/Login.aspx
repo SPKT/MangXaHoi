@@ -90,7 +90,13 @@
                            <asp:LinkButton ID="lbRecoverPassword" runat="server" Text="Quên mật khẩu" OnClick="lbRecoverPassword_Click"></asp:LinkButton><br />
                         </td>
                     </tr>
-
+                    <tr>
+                        <td class="style105">
+                            &nbsp;</td>
+                        <td align="left" class="style108">
+                           <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label><br />
+                        </td>
+                    </tr>
                 </table>
         
   

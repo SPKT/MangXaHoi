@@ -10,8 +10,11 @@ namespace SPKTCore.Core.DataAccess
     public interface IProfileRepository
     {
         Profile GetProfileByAccountID(int AccountID);
+        Profile GetProfileByProfileID(int ProfileID);
+        Profile GetProfileByUserName(string UserName);
         Int32 SaveProfile(Profile profile);
         void DeleteProfile(Profile profile);
         List<Profile> GetProfilesForIndexing(int PageNumber);
+
     }
 }

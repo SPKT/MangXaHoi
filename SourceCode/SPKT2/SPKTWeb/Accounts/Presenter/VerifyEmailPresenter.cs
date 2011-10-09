@@ -21,7 +21,6 @@ namespace SPKTWeb.Accounts.Presenter
             _accountRepository = ObjectFactory.GetInstance<IAccountRepository>();*/
             _webContext = new WebContext();
             _accountRepository = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
-
             string username = Cryptography.Decrypt(_webContext.UsernameToVerify,ParameterSetting.EmailVerificationEncryptKey);
 
             Account account = _accountRepository.GetAccountByUsername(username);

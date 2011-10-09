@@ -69,5 +69,35 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
             return results;
         }
+
+
+        public Profile GetProfileByProfileID(int ProfileID)
+        {
+            Profile profile;
+
+            using (SPKTDataContext spktDC = conn.GetContext())
+            {
+                profile = (from p in spktDC.Profiles
+                           where p.ProfileID == ProfileID
+                           select p).FirstOrDefault();
+            }
+
+            return profile;
+        }
+
+
+        public Profile GetProfileByUserName(string UserName)
+        {
+            Profile profile;
+
+            using (SPKTDataContext spktDC = conn.GetContext())
+            {
+                profile = (from p in spktDC.Profiles
+                           where p.Account.UserName == UserName
+                           select p).FirstOrDefault();
+            }
+
+            return profile;
+        }
     }
 }

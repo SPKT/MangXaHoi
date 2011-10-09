@@ -22,7 +22,7 @@ namespace SPKTCore.Core.DataAccess.Impl
                  _ConnectionString = value;
              }
          }
-        public SPKTDataContext GetContext()
+        public static SPKTDataContext GetContext()
         {
              SPKTDataContext spktDC = new SPKTDataContext(ConnectionString);
             return spktDC;

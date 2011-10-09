@@ -92,10 +92,11 @@ namespace SPKTCore.Core.Impl
         {
             //TODO: Lay noi dung email tu ben ngoai (database, tham so)
             String emailBody = "Ban da dang ky thanh cong. De hoan thanh dang ky vui long click vao link ben duoi<br>";
-            String queryStringValue = Cryptography.Encrypt(Username, ParameterSetting.EmailVerificationEncryptKey);            
-            string link = String.Format("{0}?{1}={2}", ParameterSetting.EmailVerificationURL, ParameterSetting.UsernameToVerifyQueryStringName, queryStringValue);
+            String queryStringValue = Cryptography.Encrypt(Username, ParameterSetting.EmailVerificationEncryptKey);
+            string link = String.Format("http://localhost:4120/Accounts/"+"{0}?{1}={2}", ParameterSetting.EmailVerificationURL, ParameterSetting.UsernameToVerifyQueryStringName, queryStringValue);
             emailBody += String.Format("<br>Click here to verify: <a href='{0}'>{0}</a>", link);
             SendEmailTo(To,ParameterSetting.VerificationEmailSubject, emailBody);
+
 
         }
 
