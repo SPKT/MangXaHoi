@@ -30,6 +30,7 @@ namespace SPKTWeb.Accounts.Presenter
                 account.EmailVerified = true;
                 _accountRepository.SaveAccount(account);
                 _view.ShowMessage("Your email address has been successfully verified!");
+                
             }
             else
             {

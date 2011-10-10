@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="mainCenter" runat="server">
 <table border="0"  height:243px;" style="width: 602px">
-                 <a class="divContainerTitle" style="height: 65px; width: 370px; color: #FF0000; font-size: x-large; font-weight: bold;">Đăng Ký Tài Khoản</a><br />
+                 <a class="divContainerTitle" style="height: 65px; width: 370px; color: #FF0000; font-size: x-large; font-weight: bold;">Chỉnh sửa Tài Khoản</a><br />
                    
                     <tr>
                         <td align="Right" 

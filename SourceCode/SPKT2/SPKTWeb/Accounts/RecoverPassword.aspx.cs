@@ -43,8 +43,6 @@ namespace SPKTWeb.Accounts
 
         protected void btnRecoverPassword_Click(object sender, EventArgs e)
         {
-            Response.Write("thu");
-
             _presenter.RecoverPassword(txtEmail.Text);
         }
 

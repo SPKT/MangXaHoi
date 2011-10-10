@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using StructureMap;
+using SPKTCore.Core;
 
 namespace SPKTCore.Core.Impl
 {
-     [Pluggable("Default")]
-    public class Redirector: IRedirector
+    [Pluggable("Default")]
+    public class Redirector : IRedirector
     {
 
         public void GoToAccountAccessDenied()
         {
             Redirect("~/Accounts/AccessDenied.aspx");
-            
+
         }
-         
+
         public void GoToAccountRecoverPasswordPage()
         {
             Redirect("~/Accounts/RecoverPassword.aspx");
@@ -27,7 +28,7 @@ namespace SPKTCore.Core.Impl
             Redirect("~/Accounts/EditAccount.aspx");
         }
 
-         public void GoToAccountLoginPage()
+        public void GoToAccountLoginPage()
         {
             Redirect("~/Accounts/Login.aspx");
         }
@@ -47,7 +48,7 @@ namespace SPKTCore.Core.Impl
             Redirect("~/Error.aspx");
         }
 
-        private void Redirect(string path)
+        public void Redirect(string path)
         {
             HttpContext.Current.Response.Redirect(path);
         }
@@ -57,9 +58,5 @@ namespace SPKTCore.Core.Impl
             throw new NotImplementedException();
         }
 
-        void IRedirector.Redirect(string path)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

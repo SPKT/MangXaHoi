@@ -22,9 +22,10 @@ namespace SPKTCore.Core.DataAccess.Impl
                  _ConnectionString = value;
              }
          }
-        public static SPKTDataContext GetContext()
+        public SPKTDataContext GetContext()
         {
-             SPKTDataContext spktDC = new SPKTDataContext(ConnectionString);
+            SPKTDataContext spktDC = new SPKTDataContext(ConnectionString);
+            spktDC.DeferredLoadingEnabled = false;
             return spktDC;
         }
     }

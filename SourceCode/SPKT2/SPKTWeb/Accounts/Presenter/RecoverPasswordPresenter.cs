@@ -35,7 +35,7 @@ namespace SPKTWeb.Accounts.Presenter
 
             if (account != null)
             {
-               // _email.SendPasswordReminderEmail(account.Email, account.Password, account.UserName);
+                _email.SendPasswordReminderEmail(account.Email, account.Password, account.UserName);
                 _view.ShowRecoverPasswordPanel(false);
                 _view.ShowMessage("An email was sent to your account!");
             }

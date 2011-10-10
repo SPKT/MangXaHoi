@@ -11,6 +11,7 @@ namespace SPKTCore.Core
 
 
         public const string VerificationEmailSubject = "Xác nhận email";
+        public const string RecoverPassword = "Phục hồi mật khẩu";
 
         public const string EmailVerificationURL = "VerifyEmail.aspx";
 

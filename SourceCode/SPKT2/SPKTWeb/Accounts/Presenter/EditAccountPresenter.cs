@@ -75,8 +75,7 @@ namespace SPKTWeb.Accounts.Presenter
 
                 if (!string.IsNullOrEmpty(NewPassword))
                
-                   account.Password = NewPassword.Encrypt(Username);
-
+                account.Password = NewPassword.Encrypt(Username);
                 account.DisplayName = DisplayName;
                 _accountRepository.SaveAccount(account);
                 _view.ShowMessage("Your account has been updated!");

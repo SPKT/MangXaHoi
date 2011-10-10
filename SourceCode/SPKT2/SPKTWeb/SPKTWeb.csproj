@@ -146,30 +146,6 @@
     <Content Include="Accounts\VerifyEmail.aspx" />
     <Content Include="AddData.aspx" />
     <Content Include="Image\CaptChaIma.aspx" />
-    <Content Include="MXH\DangkyDesign.ascx" />
-    <Content Include="MXH\Default.aspx" />
-    <Content Include="MXH\Image\bbl-body-bg.png" />
-    <Content Include="MXH\Image\bbl-body-bg_2.png" />
-    <Content Include="MXH\Image\bbl-head-bg.png" />
-    <Content Include="MXH\Image\bbl-head-bg_2.png" />
-    <Content Include="MXH\Image\block_topbg.gif" />
-    <Content Include="MXH\Image\blog.jpg" />
-    <Content Include="MXH\Image\bn2.jpg" />
-    <Content Include="MXH\Image\body-bg2.png" />
-    <Content Include="MXH\Image\body-bg2_2.png" />
-    <Content Include="MXH\Image\body_bg.jpg" />
-    <Content Include="MXH\Image\bt2.jpg" />
-    <Content Include="MXH\Image\but_razd.gif" />
-    <Content Include="MXH\Image\content_botbg.gif" />
-    <Content Include="MXH\Image\content_topbg.gif" />
-    <Content Include="MXH\Image\content_topbg_2.gif" />
-    <Content Include="MXH\Image\gray-grad.png" />
-    <Content Include="MXH\Image\main_menu_bg.jpg" />
-    <Content Include="MXH\Image\search.png" />
-    <Content Include="MXH\Image\searchbg.png" />
-    <Content Include="MXH\LoginDesign.ascx" />
-    <Content Include="MXH\RegisterPage.aspx" />
-    <Content Include="MXH\Untitled_1.aspx" />
     <Content Include="Picture\banner.jpg" />
     <Content Include="Picture\bg_img.png" />
     <Content Include="Picture\blog.jpg" />
@@ -225,7 +201,6 @@
     <Content Include="Picture\menu1.jpg" />
     <Content Include="Picture\menu2.jpg" />
     <Content Include="Picture\message_ind5.png" />
-    <Content Include="Picture\metamorph_wavesandstars_pag.jpg" />
     <Content Include="Picture\mn1.gif" />
     <Content Include="Picture\mn2.jpg" />
     <Content Include="Picture\mn3.jpg" />
@@ -354,34 +329,6 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MXH\DangkyDesign.ascx.cs">
-      <DependentUpon>DangkyDesign.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MXH\DangkyDesign.ascx.designer.cs">
-      <DependentUpon>DangkyDesign.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="MXH\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MXH\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MXH\LoginDesign.ascx.cs">
-      <DependentUpon>LoginDesign.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MXH\LoginDesign.ascx.designer.cs">
-      <DependentUpon>LoginDesign.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="MXH\RegisterPage.aspx.cs">
-      <DependentUpon>RegisterPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MXH\RegisterPage.aspx.designer.cs">
-      <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">

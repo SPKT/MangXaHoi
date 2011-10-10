@@ -11,9 +11,9 @@ namespace SPKTCore.Core.Impl
     [Pluggable("Default")]
     public class Email:IEmail
     {
-        const string TO_EMAIL_ADDRESS = "van01031990@gmail.com";
-        const string FROM_EMAIL_ADDRESS = "van01031990@gmail.com";
-        const string PASSWORD = "012345678";
+        const string TO_EMAIL_ADDRESS = "mxh.spkt@gmail.com";
+        const string FROM_EMAIL_ADDRESS = "mxh.spkt@gmail.com";
+        const string PASSWORD = "mxh012345";
         public void SendEmail(string From, string Subject, string Message)
         {
             MailMessage mm = new MailMessage(From, TO_EMAIL_ADDRESS);
@@ -97,12 +97,13 @@ namespace SPKTCore.Core.Impl
             emailBody += String.Format("<br>Click here to verify: <a href='{0}'>{0}</a>", link);
             SendEmailTo(To,ParameterSetting.VerificationEmailSubject, emailBody);
 
-
         }
-
-        public void SendPasswordReminderEmail(string To, string EncryptedPassword, string Username)
+        
+        public void SendPasswordReminderEmail(string To, string EncryptPassword, string Username)
         {
-            throw new NotImplementedException();
+            String Password = Cryptography.Decrypt(EncryptPassword, Username);
+            String emailBody = "Mật khẩu của user "+Username+" là:"+Password+"<br>";
+            SendEmailTo(To,ParameterSetting.RecoverPassword, emailBody);
         }
     }
 }

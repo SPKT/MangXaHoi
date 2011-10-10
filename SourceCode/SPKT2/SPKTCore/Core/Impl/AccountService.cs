@@ -78,7 +78,7 @@ namespace SPKTCore.Core.Impl
                         _userSession.LoggedIn = true;
                         _userSession.Username = Username;
                         _userSession.CurrentUser = GetAccountByID(account.AccountID);
-                        _redirector.GoToHomePage();
+                        _redirector.Redirect("~/Default.aspx");
 
                     }
                     else
@@ -104,12 +104,13 @@ namespace SPKTCore.Core.Impl
         public Account GetAccountByID(Int32 AccountID)
         {
             Account account = _accountRepository.GetAccountByID(AccountID);
-            Profile profile = _profileService.LoadProfileByAccountID(AccountID);
+            //TODO: danh cho profile
+        /*    Profile profile = _profileService.LoadProfileByAccountID(AccountID);
             if (profile != null)
             {
                 account.Profile = profile;
             }
-
+*/
             List<Permission> permissions = _permissionRepository.GetPermissionsByAccountID(AccountID);
             foreach (Permission permission in permissions)
             {
