@@ -20,7 +20,6 @@ namespace SPKTWeb
             
             if (cus.GetUser(Username.Text,true) != null)
             {
-                Response.Write("da ton tai");
                 UserAvailability.InnerText = "Username taken, sorry.";
                 UserAvailability.Attributes.Add("class", "taken");
             }

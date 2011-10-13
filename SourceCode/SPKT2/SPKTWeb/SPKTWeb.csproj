@@ -60,87 +60,6 @@
     <Content Include="About.aspx" />
     <Content Include="Accounts\EditAccount.aspx" />
     <Content Include="Accounts\Login.aspx" />
-    <Content Include="Accounts\Picture\banner.jpg" />
-    <Content Include="Accounts\Picture\bg_img.png" />
-    <Content Include="Accounts\Picture\blog.jpg" />
-    <Content Include="Accounts\Picture\bn1.jpg" />
-    <Content Include="Accounts\Picture\bn2.jpg" />
-    <Content Include="Accounts\Picture\body_bg.jpg" />
-    <Content Include="Accounts\Picture\bottom_h1.png" />
-    <Content Include="Accounts\Picture\bottom_h2.png" />
-    <Content Include="Accounts\Picture\bottom_i1.jpg" />
-    <Content Include="Accounts\Picture\bottom_i2.jpg" />
-    <Content Include="Accounts\Picture\box_home.png" />
-    <Content Include="Accounts\Picture\bt2.jpg" />
-    <Content Include="Accounts\Picture\but_over.png" />
-    <Content Include="Accounts\Picture\but_razd.gif" />
-    <Content Include="Accounts\Picture\but_search.png" />
-    <Content Include="Accounts\Picture\but_submi_ind5.png" />
-    <Content Include="Accounts\Picture\Cuoi-2.jpg" />
-    <Content Include="Accounts\Picture\c_l.png" />
-    <Content Include="Accounts\Picture\gallery_big1.jpg" />
-    <Content Include="Accounts\Picture\gallery_big2.jpg" />
-    <Content Include="Accounts\Picture\gallery_big3.jpg" />
-    <Content Include="Accounts\Picture\gallery_big4.jpg" />
-    <Content Include="Accounts\Picture\gallery_big5.jpg" />
-    <Content Include="Accounts\Picture\gallery_big6.jpg" />
-    <Content Include="Accounts\Picture\gallery_big7.jpg" />
-    <Content Include="Accounts\Picture\gallery_big8.jpg" />
-    <Content Include="Accounts\Picture\gallery_big9.jpg" />
-    <Content Include="Accounts\Picture\Header.jpg" />
-    <Content Include="Accounts\Picture\hinh.jpg" />
-    <Content Include="Accounts\Picture\img1.gif" />
-    <Content Include="Accounts\Picture\img2.gif" />
-    <Content Include="Accounts\Picture\img21.jpg" />
-    <Content Include="Accounts\Picture\img22.jpg" />
-    <Content Include="Accounts\Picture\img3.gif" />
-    <Content Include="Accounts\Picture\img31.jpg" />
-    <Content Include="Accounts\Picture\img32.jpg" />
-    <Content Include="Accounts\Picture\img33.jpg" />
-    <Content Include="Accounts\Picture\img34.jpg" />
-    <Content Include="Accounts\Picture\img35.jpg" />
-    <Content Include="Accounts\Picture\img36.jpg" />
-    <Content Include="Accounts\Picture\img37.jpg" />
-    <Content Include="Accounts\Picture\img38.jpg" />
-    <Content Include="Accounts\Picture\img39.jpg" />
-    <Content Include="Accounts\Picture\img41.jpg" />
-    <Content Include="Accounts\Picture\img_bg_ind3.png" />
-    <Content Include="Accounts\Picture\input.png" />
-    <Content Include="Accounts\Picture\input_ind5.png" />
-    <Content Include="Accounts\Picture\logo.jpg" />
-    <Content Include="Accounts\Picture\main.jpg" />
-    <Content Include="Accounts\Picture\main_bg.png" />
-    <Content Include="Accounts\Picture\menu.gif" />
-    <Content Include="Accounts\Picture\menu1.gif" />
-    <Content Include="Accounts\Picture\menu1.jpg" />
-    <Content Include="Accounts\Picture\menu2.jpg" />
-    <Content Include="Accounts\Picture\message_ind5.png" />
-    <Content Include="Accounts\Picture\metamorph_wavesandstars_pag.jpg" />
-    <Content Include="Accounts\Picture\mn1.gif" />
-    <Content Include="Accounts\Picture\mn2.jpg" />
-    <Content Include="Accounts\Picture\mn3.jpg" />
-    <Content Include="Accounts\Picture\mn4.jpg" />
-    <Content Include="Accounts\Picture\mn5.jpg" />
-    <Content Include="Accounts\Picture\nen1.jpg" />
-    <Content Include="Accounts\Picture\nen2.jpg" />
-    <Content Include="Accounts\Picture\profile.jpg" />
-    <Content Include="Accounts\Picture\project1.jpg" />
-    <Content Include="Accounts\Picture\project2.jpg" />
-    <Content Include="Accounts\Picture\read.png" />
-    <Content Include="Accounts\Picture\rol_over_galery.png" />
-    <Content Include="Accounts\Picture\scroll1.jpg" />
-    <Content Include="Accounts\Picture\scroll2.jpg" />
-    <Content Include="Accounts\Picture\scroll3.jpg" />
-    <Content Include="Accounts\Picture\scroll4.jpg" />
-    <Content Include="Accounts\Picture\scroll5.jpg" />
-    <Content Include="Accounts\Picture\scroll_small.png" />
-    <Content Include="Accounts\Picture\submit.png" />
-    <Content Include="Accounts\Picture\textarea.png" />
-    <Content Include="Accounts\Picture\timkiem.jpg" />
-    <Content Include="Accounts\Picture\top_left.png" />
-    <Content Include="Accounts\Picture\top_right.png" />
-    <Content Include="Accounts\Picture\top_text.gif" />
-    <Content Include="Accounts\Picture\t_c.png" />
     <Content Include="Accounts\RecoverPassword.aspx" />
     <Content Include="Accounts\Register.aspx" />
     <Content Include="Accounts\VerifyEmail.aspx" />
@@ -226,6 +145,7 @@
     <Content Include="Picture\top_right.png" />
     <Content Include="Picture\top_text.gif" />
     <Content Include="Picture\t_c.png" />
+    <Content Include="Profiles\ManageProfile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Style1.css" />
     <Content Include="Style2.css" />
@@ -330,6 +250,15 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Profiles\Interface\IManageProfile.cs" />
+    <Compile Include="Profiles\ManageProfile.aspx.cs">
+      <DependentUpon>ManageProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\ManageProfile.aspx.designer.cs">
+      <DependentUpon>ManageProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\Presenter\ManageProfilePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -353,7 +282,6 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Accounts\Picture\Untitled-1.psd" />
     <Content Include="StrutureMap.config" />
     <Content Include="MasterPage.Master" />
     <None Include="Picture\Untitled-1.psd" />

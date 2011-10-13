@@ -25,7 +25,6 @@ namespace SPKTWeb.Accounts.Presenter
             _accountService = new SPKTCore.Core.Impl.AccountService();
             _redirector = new SPKTCore.Core.Impl.Redirector();
             _webContext = new SPKTCore.Core.Impl.WebContext();
-
        }
 
         public void Login(string username, string password)
