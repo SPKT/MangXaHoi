@@ -14,5 +14,6 @@ namespace SPKTCore.Core
         bool LoggedIn { get; set; }
         string Username { get; set; }
         Account CurrentUser { get; set; }
+        Profile CurrentProfile { get; set; }
     }
 }

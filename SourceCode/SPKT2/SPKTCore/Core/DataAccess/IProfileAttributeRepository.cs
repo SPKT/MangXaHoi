@@ -13,5 +13,8 @@ namespace SPKTCore.Core.DataAccess
         void SaveProfileAttribute(ProfileAttribute attribute);
         List<ProfileAttribute> GetProfileAttributesByProfileID(Int32 ProfileID);
         ProfileAttributeType GetProfileAttributeTypeByID(Int32 profileAttributeTypeID);
+        List<ProfileAttribute> GetProfileAttributesByProfileIDAndType(Int32 ProfileID, Int32 TypeID);
+        ProfileAttribute GetProfileAttributesByProfileIDAndTypeID(Int32 ProfileID, Int32 TypeID);
+
     }
 }

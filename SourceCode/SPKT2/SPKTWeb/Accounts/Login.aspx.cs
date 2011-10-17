@@ -14,10 +14,11 @@ namespace SPKTWeb.Accounts
     public partial class Login : System.Web.UI.Page,ILogin
     {
         private LoginPresenter _Presenter;
+        public HttpCookie cookie;// = new HttpCookie("Login");
         protected void Page_Load(object sender, EventArgs e)
         {
             _Presenter = new LoginPresenter();
-            _Presenter.Init(this);
+            _Presenter.Init(this);            
         }
 
         public void DisplayMessage(string Message)
@@ -36,8 +37,9 @@ namespace SPKTWeb.Accounts
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            _Presenter.Login(txtUserName.Text, txtPassword.Text);
+        {            
+            _Presenter.Login(txtUserName.Text, txtPassword.Text,ckbAutoLogin.Checked);
+            
         }
     }
 }

@@ -55,35 +55,7 @@ namespace SPKTWeb.Accounts.Presenter
 
         public void UpdateAccount(string OldPassword, string NewPassword, string Username,string DisplayName,string Email )
         {
-            //verify that this user is the same as the logged in user
-            if(OldPassword.Encrypt(Username) == account.Password)
-            {
-                if (Email != _userSession.CurrentUser.Email)
-                {
-                    if (!_accountService.EmailInUse(Email))
-                    {
-                        account.Email = Email;
-                        account.EmailVerified = false;
-                        _email.SendEmailAddressVerificationEmail(account.UserName, Email);                        
-                    }
-                    else
-                    {
-                        _view.ShowMessage("The email your entered is already in our system!");
-                        return;
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(NewPassword))
-               
-                account.Password = NewPassword.Encrypt(Username);
-                account.DisplayName = DisplayName;
-                _accountRepository.SaveAccount(account);
-                _view.ShowMessage("Your account has been updated!");
-            }
-            else
-            {
-                _view.ShowMessage("The password you entered doesn't match your current password!  Please try again.");
-            }
+            //TODO: chua lam
         }
     }
 }

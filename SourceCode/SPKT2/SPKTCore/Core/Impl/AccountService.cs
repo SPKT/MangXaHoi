@@ -61,16 +61,37 @@ namespace SPKTCore.Core.Impl
             _userSession.Username = "";
             _redirector.GoToAccountLoginPage();
         }
-
-        public string Login(string Username, string Password)
+        public void Register(Account a, string permission)
+        {
+            _accountRepository.SaveAccount(a);
+            Permission publicPermission = _permissionRepository.GetPermissionByName(permission);
+            Permission registeredPermission = _permissionRepository.GetPermissionByName("Registered");
+            Account newAccount = _accountRepository.GetAccountByUsername(a.UserName);
+            _accountRepository.AddPermission(newAccount, publicPermission);
+            _accountRepository.AddPermission(newAccount, registeredPermission);
+            _email.SendEmailAddressVerificationEmail(a.UserName, a.Email);
+        }
+        public bool Login(string Username, string Password, bool rememberMe, out String returnMessage)
+        {
+            if (rememberMe == false)
+                return Login(Username, Password,out returnMessage);
+            IWebContext webContext = new WebContext();
+            webContext.SaveLoginInfoToCookie(Username, Password);
+            return Login(Username, Password, out returnMessage); 
+        }
+        public bool Login(string Username, string Password)
+        {
+            String message;
+            return Login(Username, Password,out message );
+        }
+        public bool Login(string Username, string Password,out String returnMessage)
         {
             Password = Password.Encrypt(Username);
             Account account = _accountRepository.GetAccountByUsername(Username);
 
-            //if there is only one account returned - good
             if (account != null)
             {
-                //password matches
+                
                 if (account.Password == Password)
                 {
                     if (account.EmailVerified)
@@ -78,39 +99,37 @@ namespace SPKTCore.Core.Impl
                         _userSession.LoggedIn = true;
                         _userSession.Username = Username;
                         _userSession.CurrentUser = GetAccountByID(account.AccountID);
-                        _redirector.Redirect("~/Default.aspx");
-
+                        returnMessage = "Đăng nhập thành công";
+                        return true;
                     }
                     else
                     {
-                        _email.SendEmailAddressVerificationEmail(account.UserName, account.Email);
-                        return @"The login information you provided was correct 
-                                but your email address has not yet been verified.  
-                                We just sent another email verification email to you.  
-                                Please follow the instructions in that email.";
+                        
+                        returnMessage= @"Bạn chưa xác thực email";
+                        return false;
                     }
                 }
                 else
                 {
-                    return "We were unable to log you in with that information!";
+                    returnMessage= "Tên đăng nhập hoặc mật khẩu không đúng";
+                    return false;
                 }
             }
 
-            return "We were unable to log you in with that information!";
-        }
-
+            returnMessage = "We were unable to log you in with that information!";
+            return false;
+        }        
 
         // lay ra 1 account theo AccountID dua vao
         public Account GetAccountByID(Int32 AccountID)
         {
             Account account = _accountRepository.GetAccountByID(AccountID);
-            //TODO: danh cho profile
-        /*    Profile profile = _profileService.LoadProfileByAccountID(AccountID);
+            //TODO:danh cho profile
+            Profile profile = _profileService.LoadProfileByAccountID(AccountID);
             if (profile != null)
             {
                 account.Profile = profile;
             }
-*/
             List<Permission> permissions = _permissionRepository.GetPermissionsByAccountID(AccountID);
             foreach (Permission permission in permissions)
             {

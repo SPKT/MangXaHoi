@@ -15,8 +15,8 @@ namespace SPKTWeb.Accounts.Presenter
     public class RegisterPresenter
     {
         private IRegister _view;
-        private IAccountRepository _accountRepository;
-        private IPermissionRepository _permissionRepository;
+        //private IAccountRepository _accountRepository;
+        //private IPermissionRepository _permissionRepository;
         private IAccountService _accountService;
         private IWebContext _webContext;
         private IEmail _email;
@@ -30,8 +30,8 @@ namespace SPKTWeb.Accounts.Presenter
              _accountService = ObjectFactory.GetInstance<IAccountService>();
             _webContext = ObjectFactory.GetInstance<IWebContext>();
             _email = ObjectFactory.GetInstance<IEmail>();*/
-            _accountRepository = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
-            _permissionRepository = new SPKTCore.Core.DataAccess.Impl.PermissionRepository();
+            //_accountRepository = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
+            //_permissionRepository = new SPKTCore.Core.DataAccess.Impl.PermissionRepository();
             _accountService = new AccountService();
             _webContext = new WebContext();
             _email = new Email();
@@ -47,46 +47,46 @@ namespace SPKTWeb.Accounts.Presenter
         public void Register(string Username, string Password,string Email, EnumObject Object,
              string Captcha)
         {
-                
-                if (Captcha == _webContext.CaptchaImageText)
+
+            if (Captcha == _webContext.CaptchaImageText)
+            {
+                SPKTCore.Core.Domain.Account a =
+                    new SPKTCore.Core.Domain.Account();
+                a.Email = Email;
+                a.UserName = Username;
+                a.DisplayName = a.UserName;
+                a.CreateDate = DateTime.Now;
+                a.Password = Password.Encrypt(Username);
+
+
+                if (_accountService.EmailInUse(Email))
                 {
-                    SPKTCore.Core.Domain.Account a =
-                        new SPKTCore.Core.Domain.Account();
-                    a.Email = Email;
-                    a.UserName = Username;
-                    a.DisplayName = a.UserName;
-                    a.CreateDate = DateTime.Now;
-                    a.Password = Password.Encrypt(Username);
-                   
+                    _view.ShowErrorMessage("Mail đã được sử dụng");
+                }
+                else if (_accountService.UsernameInUse(Username))
+                {
+                    _view.ShowErrorMessage("Tên đăng nhập này đã được sử dụng");
 
-                    if (_accountService.EmailInUse(Email))
-                    {
-                        _view.ShowErrorMessage("Mail đã được sử dụng");
-                     }
-                    else if (_accountService.UsernameInUse(Username))
-                    {
-                        _view.ShowErrorMessage("Tên đăng nhập này đã được sử dụng");
-              
-                    }
-                    else
-                    {
-                        _accountRepository.SaveAccount(a);
-                        Permission publicPermission = _permissionRepository.GetPermissionByName(Object.ToString());
-                        Permission registeredPermission = _permissionRepository.GetPermissionByName("Registered");
-                        SPKTCore.Core.Domain.Account newAccount = _accountRepository.GetAccountByUsername(Username);
-
-                        _accountRepository.AddPermission(newAccount, publicPermission);
-                        _accountRepository.AddPermission(newAccount, registeredPermission);
-
-
-                        _email.SendEmailAddressVerificationEmail(a.UserName, a.Email);
-                        _redirector.GoToAccountLoginPage();
-                    }
                 }
                 else
                 {
-                    _view.ShowErrorMessage("CAPTCHA bạn nhập không đúng! Vui lòng nhập lại");
+                    string permission = Object.ToString();
+                    _accountService.Register(a, permission);
+                    //_accountRepository.SaveAccount(a);
+                    //Permission publicPermission = _permissionRepository.GetPermissionByName(Object.ToString());
+                    //Permission registeredPermission = _permissionRepository.GetPermissionByName("Registered");
+                    //SPKTCore.Core.Domain.Account newAccount = _accountRepository.GetAccountByUsername(Username);
+
+                    //_accountRepository.AddPermission(newAccount, publicPermission);
+                    //_accountRepository.AddPermission(newAccount, registeredPermission);
+                    //_email.SendEmailAddressVerificationEmail(a.UserName, a.Email);
+                    _redirector.GoToAccountLoginPage();
                 }
+            }
+            else
+            {
+                _view.ShowErrorMessage("CAPTCHA bạn nhập không đúng! Vui lòng nhập lại");
+            }
 
         }
     }

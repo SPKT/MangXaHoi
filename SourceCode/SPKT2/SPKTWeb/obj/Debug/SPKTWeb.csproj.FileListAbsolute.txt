@@ -41,3 +41,4 @@ D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTWeb\bin\tr-TR\AjaxContr
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTWeb\bin\zh-CHS\AjaxControlToolkit.resources.dll
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTWeb\bin\zh-CHT\AjaxControlToolkit.resources.dll
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTWeb\bin\StructureMap.xml
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTWeb\bin\StructureMap.dll

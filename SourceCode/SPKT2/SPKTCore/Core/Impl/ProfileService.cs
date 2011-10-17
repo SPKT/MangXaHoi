@@ -38,10 +38,10 @@ namespace SPKTCore.Core.Impl
             if (profile != null && profile.ProfileID > 0)
             {
                 attributes = _profileAttributeService.GetProfileAttributesByProfileID(profile.ProfileID);
-                levelOfExperience = _levelOfExperienceRepository.GetLevelOfExperienceByID(profile.LevelOfExperienceID);
+                //levelOfExperience = _levelOfExperienceRepository.GetLevelOfExperienceByID(profile.LevelOfExperienceID);
 
                 profile.Attributes = attributes;
-                profile.levelOfExperience = levelOfExperience;
+               // profile.levelOfExperience = levelOfExperience;
             }
             return profile;
         }
@@ -53,10 +53,10 @@ namespace SPKTCore.Core.Impl
             if (profile != null && profile.ProfileID > 0)
             {
                 attributes = _profileAttributeService.GetProfileAttributesByProfileID(profile.ProfileID);
-                levelOfExperience = _levelOfExperienceRepository.GetLevelOfExperienceByID(profile.LevelOfExperienceID);
+               // levelOfExperience = _levelOfExperienceRepository.GetLevelOfExperienceByID(profile.LevelOfExperienceID);
 
                 profile.Attributes = attributes;
-                profile.levelOfExperience = levelOfExperience;
+              //  profile.levelOfExperience = levelOfExperience;
             }
             return profile;
         }
@@ -70,11 +70,18 @@ namespace SPKTCore.Core.Impl
                 attribute.ProfileID = profileID;
                 _profileAttributeRepository.SaveProfileAttribute(attribute);
             }
-
+            _userSession.CurrentProfile = LoadProfileByAccountID(_userSession.CurrentUser.AccountID);
             _userSession.CurrentUser.Profile = LoadProfileByAccountID(_userSession.CurrentUser.AccountID);
+        }
+        public void SaveProfileTable(Profile profile)
+        {
+            _profileRepository.SaveProfile(profile);
         }
 
 
-
+        public Profile GetProfileByProfileID(int proID)
+        {
+            return _profileRepository.GetProfileByProfileID(proID);
+        }
     }
 }

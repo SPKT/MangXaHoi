@@ -42,7 +42,17 @@ namespace SPKTCore.Core.Impl
                 _webContext.CurrentUser = value;
             }
         }
-
+        public Profile CurrentProfile
+        {
+            get
+            {
+                return _webContext.CurrentProfile;
+            }
+            set
+            {
+                _webContext.CurrentProfile = value;
+            }
+        }
         public string Username
         {
             get

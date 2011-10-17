@@ -19,33 +19,6 @@
                     </tr>
                     <tr>
                         <td align="right" 
-                            style="color: #0000FF; font-size: large;" class="style106">
-                            Mật khẩu cũ:</td>
-                        <td align="left" class="style109">
-                            <asp:TextBox ID="txtOldPassword" runat="server" BorderStyle="Inset" BorderWidth="2px" 
-                                Height="18px" TextMode="Password" Width="170px"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right" 
-                            style="color: #0000FF; font-size: large;" class="style106">
-                            Mật khẩu mới:</td>
-                        <td align="left" class="style109">
-                            <asp:TextBox ID="txtNewPassword1" runat="server" BorderStyle="Inset" BorderWidth="2px" 
-                                Height="18px" TextMode="Password" Width="170px"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right" 
-                            style="color: #0000FF; font-size: large;" class="style106">
-                           Lặp lại mật khẩu mới:</td>
-                        <td align="left" class="style109">
-                            <asp:TextBox ID="txtNewPassword2" runat="server" BorderStyle="Inset" BorderWidth="2px" 
-                                Height="18px" TextMode="Password" Width="170px"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right" 
                             style="color: #0000FF; font-size: large;" class="style104">
                             Tên hiển thị:</td>
                         <td align="left" class="style104">
@@ -62,8 +35,7 @@
                                 Height="18px" Width="170px"></asp:TextBox>
                         </td>
                     </tr>
-
-
+                 
                    <tr>
                         <td class="style107">
                         </td>

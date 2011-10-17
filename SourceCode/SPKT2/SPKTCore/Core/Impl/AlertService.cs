@@ -26,12 +26,12 @@ namespace SPKTCore.Core.Impl
             _userSession = new UserSession();
             _alertRepository = new AlertRepository();
             _webContext = new WebContext();
+            alert = new Alert();
         }
 
         private void Init()
         {
             account = _userSession.CurrentUser;
-
             alert = new Alert();
             alert.AccountID = account.AccountID;
             alert.CreateDate = DateTime.Now;
@@ -63,6 +63,7 @@ namespace SPKTCore.Core.Impl
             alertMessage = "<div class=\"AlertHeader\">" + GetProfileUrl(account.UserName) +
                            " just created their profile!</div>";
             alertMessage += "<div class=\"AlertRow\">" + GetSendMessageUrl(account.AccountID) + "</div>";
+            alert.CreateDate = DateTime.Now;
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.ProfileCreated;
             SaveAlert(alert);

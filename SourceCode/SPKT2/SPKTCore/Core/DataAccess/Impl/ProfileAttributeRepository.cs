@@ -27,16 +27,18 @@ namespace SPKTCore.Core.DataAccess.Impl
 
         public List<ProfileAttributeType> GetProfileAttributeTypes()
         {
-            List<ProfileAttributeType> result;
+            List<ProfileAttributeType> list = new List<ProfileAttributeType>();
             using (SPKTDataContext spktspktDC = conn.GetContext())
             {
-                IEnumerable<ProfileAttributeType> types = from t in spktspktDC.ProfileAttributeTypes
+                var result = from t in spktspktDC.ProfileAttributeTypes
                                                           orderby t.SortOrder
                                                           select t;
-                result = types.ToList();
+                foreach (ProfileAttributeType p in result)
+                {
+                    list.Add(p);
+                }
             }
-
-            return result;
+            return list;
         }
 
         public void AddProfileAttributes(params ProfileAttribute[] attributes)
@@ -57,6 +59,7 @@ namespace SPKTCore.Core.DataAccess.Impl
                 }
                 else
                 {
+                    attribute.CreateDate = DateTime.Now;
                     spktDC.ProfileAttributes.InsertOnSubmit(attribute);
                 }
                 spktDC.SubmitChanges();
@@ -69,15 +72,44 @@ namespace SPKTCore.Core.DataAccess.Impl
 
             using (SPKTDataContext spktDC = conn.GetContext())
             {
-                IEnumerable<ProfileAttribute> result = from pa in spktDC.ProfileAttributes
+                var result = from pa in spktDC.ProfileAttributes
                                                        join pat in spktDC.ProfileAttributeTypes
                                                        on pa.ProfileAttributeTypeID equals pat.ProfileAttributeTypeID
                                                        orderby pat.SortOrder
                                                        where pa.ProfileID == ProfileID
                                                        select pa;
-                list = result.ToList();
+                foreach (ProfileAttribute p in result)
+                    list.Add(p);
             }
 
+            return list;
+        }
+        public ProfileAttribute GetProfileAttributesByProfileIDAndTypeID(Int32 ProfileID, Int32 TypeID)
+        {
+            ProfileAttribute attribute;
+
+            using (SPKTDataContext spktDC = conn.GetContext())
+            {
+                attribute = (from t in spktDC.ProfileAttributes
+                             where t.ProfileID == ProfileID && t.ProfileAttributeTypeID == TypeID
+                             select t).FirstOrDefault();
+               
+            }
+            return attribute;
+        }
+        //lay attribubte theo ProfileID va typeID
+        public List<ProfileAttribute> GetProfileAttributesByProfileIDAndType(Int32 ProfileID, Int32 TypeID)
+        {
+            List<ProfileAttribute> list = new List<ProfileAttribute>();
+
+            using (SPKTDataContext spktDC = conn.GetContext())
+            {
+                var ds = from t in spktDC.ProfileAttributes
+                         where t.ProfileID == ProfileID && t.ProfileAttributeTypeID == TypeID
+                         select t;
+                foreach (ProfileAttribute p in ds)
+                    list.Add(p);
+            }
             return list;
         }
     }

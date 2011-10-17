@@ -63,7 +63,7 @@
                         <td class="style105">
                             &nbsp;</td>
                         <td align="left" class="style108">
-                            <asp:CheckBox ID="CheckBox1" runat="server" ForeColor="Blue" 
+                            <asp:CheckBox ID="ckbAutoLogin" runat="server" ForeColor="Blue" 
                                 Text="Lưu trạng thái đăng nhập" />
                         </td>
                     </tr>

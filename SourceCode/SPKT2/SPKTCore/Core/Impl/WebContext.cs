@@ -44,7 +44,22 @@ namespace SPKTCore.Core.Impl
                 SetInSession("CurrentUser", value);
             }
         }
+        public Profile CurrentProfile
+        {
+            get
+            {
+                if (ContainsInSession("CurrentProfile"))
+                {
+                    return GetFromSession("CurrentProfile") as Profile;
+                }
 
+                return null;
+            }
+            set
+            {
+                SetInSession("CurrentProfile", value);
+            }
+        }
       
         public string Username
         {
@@ -63,8 +78,25 @@ namespace SPKTCore.Core.Impl
                 SetInSession("Username",value);
             }
         }
-        
-  
+
+        public void SaveLoginInfoToCookie(String username, String password)
+        {
+            HttpCookie cook = new HttpCookie("Login");
+            cook["Username"] = username;
+            cook["Password"] = password;
+            cook.Expires = DateTime.Now.AddDays(20);
+            WriteToCookie(cook);
+        }
+        public bool LoginInUseCookie()
+        {
+            HttpCookie cookLogin = GetInCookie("Login");
+            if (cookLogin == null)
+                return false;            
+            String username = cookLogin["UserName"];
+            String pass = cookLogin["Password"];
+            IAccountService accountService = new SPKTCore.Core.Impl.AccountService();
+            return accountService.Login(username, pass);
+        }
         public bool LoggedIn
         {
             get
@@ -78,13 +110,41 @@ namespace SPKTCore.Core.Impl
                 }
                 else
                 {
-                    return false;
+                    return LoginInUseCookie();
                 }
             }   
             set
             {
                 SetInSession("LoggedIn", value);
             }
+        }
+
+        private HttpCookie GetInCookie(string name)
+        {
+            if (HttpContext.Current == null || HttpContext.Current.Session == null)
+            {
+                return null;
+            }
+            return HttpContext.Current.Request.Cookies[name];
+        }
+        private void WriteToCookie(HttpCookie value)
+        {
+            if (HttpContext.Current == null || HttpContext.Current.Session == null)
+            {
+                return ;
+            }
+
+            HttpContext.Current.Response.Cookies.Add(value);
+        }
+        private void RemoveCookie(string name)
+        {
+            if (HttpContext.Current == null || HttpContext.Current.Session == null)
+            {
+                return;
+            }
+            HttpCookie ck = new HttpCookie(name);
+            ck.Expires = DateTime.Now.AddDays(-2);
+            HttpContext.Current.Response.Cookies.Add(ck);
         }
         //lay username từ chuỗi mã hóa trong link xác nhận mail
         public string UsernameToVerify
@@ -110,10 +170,11 @@ namespace SPKTCore.Core.Impl
             HttpContext.Current.Session.Remove(key);
         }
         // lấy giá trị key của query string
-        private string GetQueryStringValue(string key)
+        public string GetQueryStringValue(string key)
         {
             return HttpContext.Current.Request.QueryString[key];
         }
+
 
         private void SetInSession(string key, object value)
         {

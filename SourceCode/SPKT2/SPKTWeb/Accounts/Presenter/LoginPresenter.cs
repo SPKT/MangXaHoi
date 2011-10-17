@@ -25,11 +25,15 @@ namespace SPKTWeb.Accounts.Presenter
             _accountService = new SPKTCore.Core.Impl.AccountService();
             _redirector = new SPKTCore.Core.Impl.Redirector();
             _webContext = new SPKTCore.Core.Impl.WebContext();
+           // if(_webContext.LoggedIn)
+              //  _redirector.Redirect("~\\Profiles\\ManageProfile.aspx");
        }
-
-        public void Login(string username, string password)
+        
+        public void Login(string username, string password,bool rememberMe)
         {
-            string message = _accountService.Login(username, password);
+            string message;
+            if (_accountService.Login(username, password, rememberMe, out message))
+                _redirector.Redirect("~/Homes/home.aspx?UserName=" + username);
             _view.DisplayMessage(message);
         }
 
@@ -42,5 +46,6 @@ namespace SPKTWeb.Accounts.Presenter
         {
             _redirector.GoToAccountRecoverPasswordPage();
         }
+
     }
 }

@@ -32,7 +32,7 @@ namespace SPKTWeb.Accounts.Presenter
         public void RecoverPassword(string Email)
         {
             SPKTCore.Core.Domain.Account account = _accountRepository.GetAccountByEmail(Email);
-
+            
             if (account != null)
             {
                 _email.SendPasswordReminderEmail(account.Email, account.Password, account.UserName);

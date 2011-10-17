@@ -20,7 +20,8 @@ namespace SPKTWeb.Accounts
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            _presenter.UpdateAccount(txtOldPassword.Text, txtNewPassword2.Text, lblUserName.Text, txtDisplayName.Text,txtEmail.Text);
+            //TODO: chua lam editAccount
+           // _presenter.UpdateAccount(txtOldPassword.Text, txtNewPassword2.Text, lblUserName.Text, txtDisplayName.Text,txtEmail.Text);
         }
 
         public void ShowMessage(string Message)

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using StructureMap;
 using SPKTCore.Core.Domain;
+using SPKTCore.Core.Impl;
+using System.Data.SqlTypes;
 
 namespace SPKTCore.Core.DataAccess.Impl
 {
@@ -13,6 +15,11 @@ namespace SPKTCore.Core.DataAccess.Impl
         private Connection conn;
         private IAlertService _alertService;
         //private IConfiguration _configuration;
+        public ProfileRepository()
+        {
+            conn = new Connection();
+            _alertService = new AlertService();
+        }
         public Profile GetProfileByAccountID(int AccountID)
         {
             Profile profile;
@@ -42,7 +49,7 @@ namespace SPKTCore.Core.DataAccess.Impl
                 {
                     profile.CreateDate = DateTime.Now;
                     spktDC.Profiles.InsertOnSubmit(profile);
-                    _alertService.AddProfileCreatedAlert();
+                   _alertService.AddProfileCreatedAlert();
                 }
                 spktDC.SubmitChanges();
                 profileID = profile.ProfileID;

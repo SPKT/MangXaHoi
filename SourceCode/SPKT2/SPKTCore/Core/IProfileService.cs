@@ -11,5 +11,8 @@ namespace SPKTCore.Core
         Profile LoadProfileByAccountID(Int32 AccountID);
         Profile LoadProfileByUserName(string UserName);
         void SaveProfile(Profile profile);
+        void SaveProfileTable(Profile profile);
+
+        Profile GetProfileByProfileID(int proID);
     }
 }

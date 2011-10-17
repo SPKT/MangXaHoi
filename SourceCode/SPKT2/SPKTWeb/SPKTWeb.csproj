@@ -64,6 +64,7 @@
     <Content Include="Accounts\Register.aspx" />
     <Content Include="Accounts\VerifyEmail.aspx" />
     <Content Include="AddData.aspx" />
+    <Content Include="Homes\Home.aspx" />
     <Content Include="Image\CaptChaIma.aspx" />
     <Content Include="Picture\banner.jpg" />
     <Content Include="Picture\bg_img.png" />
@@ -146,6 +147,10 @@
     <Content Include="Picture\top_text.gif" />
     <Content Include="Picture\t_c.png" />
     <Content Include="Profiles\ManageProfile.aspx" />
+    <Content Include="Profiles\Test.aspx" />
+    <Content Include="Profiles\UserControls\ProfileAttributeControl.ascx" />
+    <Content Include="Profiles\UserControls\ProfileAttributeControlFull.ascx" />
+    <Content Include="Profiles\UserProfile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Style1.css" />
     <Content Include="Style2.css" />
@@ -236,6 +241,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Homes\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homes\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Homes\Interface\IHome.cs" />
+    <Compile Include="Homes\Presenter\HomePresenter.cs" />
     <Compile Include="Image\CaptChaIma.aspx.cs">
       <DependentUpon>CaptChaIma.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -251,6 +265,7 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Profiles\Interface\IManageProfile.cs" />
+    <Compile Include="Profiles\Interface\IUserProfile.cs" />
     <Compile Include="Profiles\ManageProfile.aspx.cs">
       <DependentUpon>ManageProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -259,6 +274,35 @@
       <DependentUpon>ManageProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profiles\Presenter\ManageProfilePresenter.cs" />
+    <Compile Include="Profiles\Presenter\UserProfilePresenter.cs" />
+    <Compile Include="Profiles\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControl.ascx.cs">
+      <DependentUpon>ProfileAttributeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControl.ascx.designer.cs">
+      <DependentUpon>ProfileAttributeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControlFull.ascx.cs">
+      <DependentUpon>ProfileAttributeControlFull.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControlFull.ascx.designer.cs">
+      <DependentUpon>ProfileAttributeControlFull.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

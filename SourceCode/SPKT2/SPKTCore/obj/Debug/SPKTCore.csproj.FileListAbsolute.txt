@@ -20,8 +20,9 @@ D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT (3)\SPKTCore\obj\Debug\SPKTC
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\bin\Debug\SPKTCore.dll.config
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\bin\Debug\SPKTCore.dll
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\bin\Debug\SPKTCore.pdb
-D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\bin\Debug\StructureMap.dll
-D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\bin\Debug\StructureMap.xml
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\obj\Debug\ResolveAssemblyReference.cache
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\obj\Debug\SPKTCore.dll
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\obj\Debug\SPKTCore.pdb
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\bin\Debug\Rhino.Mocks.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\bin\Debug\StructureMap.AutoMocking.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTCore\bin\Debug\StructureMap.AutoMocking.xml
