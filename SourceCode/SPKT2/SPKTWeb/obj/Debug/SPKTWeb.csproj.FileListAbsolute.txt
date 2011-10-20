@@ -42,3 +42,10 @@ D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTWeb\bin\zh-CHS\AjaxCont
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTWeb\bin\zh-CHT\AjaxControlToolkit.resources.dll
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTWeb\bin\StructureMap.xml
 D:\HK1-2011-2012\TieuLuan\MangXaHoi\SourceCode\SPKT2\SPKTWeb\bin\StructureMap.dll
+F:\Thuy_TLCN\SourceCode\SPKT2\SPKTWeb\bin\SPKTWeb.dll
+F:\Thuy_TLCN\SourceCode\SPKT2\SPKTWeb\bin\SPKTWeb.pdb
+F:\Thuy_TLCN\SourceCode\SPKT2\SPKTWeb\bin\SPKTCore.dll
+F:\Thuy_TLCN\SourceCode\SPKT2\SPKTWeb\bin\SPKTCore.pdb
+F:\Thuy_TLCN\SourceCode\SPKT2\SPKTWeb\obj\Debug\ResolveAssemblyReference.cache
+F:\Thuy_TLCN\SourceCode\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.dll
+F:\Thuy_TLCN\SourceCode\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.pdb
