@@ -27,7 +27,7 @@
                         <td align="left" class="style108">
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                        <ContentTemplate>
-                            <asp:TextBox ID="txtUserName" AutoPostBack="true" runat="server" 
+                            <asp:TextBox ID="txtUserName" runat="server" 
                                 BorderStyle="Inset" BorderWidth="2px" 
                                 Height="22px" Width="170px" ontextchanged="txtUserName_TextChanged"></asp:TextBox>
                             <asp:Label ID="lblCheckUsername" runat="server"></asp:Label>
@@ -42,15 +42,11 @@
                             style="color: #0000FF; font-size: large;" class="style106">
                             Mật khẩu:</td>
                         <td align="left" class="style109">
-                        <asp:UpdatePanel ID="UpdatePanel3" runat="server">
-                        <ContentTemplate>
-                            <asp:TextBox ID="txtPassword" AutoPostBack="true" runat="server" 
+                           <asp:TextBox ID="txtPassword" EnableViewState="true" runat="server" 
                                 BorderStyle="Inset" BorderWidth="2px" 
                                 Height="21px"  Width="171px" TextMode="Password"
                                 ontextchanged="txtPassword_TextChanged"></asp:TextBox>
                             <asp:Label ID="lblMessageLegthPass" runat="server"></asp:Label>
-                        </ContentTemplate>
-                        </asp:UpdatePanel>
                         </td>
                     </tr>
                     <tr>
@@ -58,16 +54,12 @@
                             style="color: #0000FF; font-size: large;" class="style106">
                             Nhắc lại Mật khẩu:</td>
                         <td align="left" class="style109">
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                        <ContentTemplate>
                             <asp:TextBox ID="txtPasswordPre" AutoPostBack="true" runat="server" 
                                 BorderStyle="Inset" BorderWidth="2px" 
                                 Height="21px" TextMode="Password" Width="171px" 
                                 ontextchanged="txtPasswordPre_TextChanged"></asp:TextBox>
                             <asp:Label ID="lblMessagepass" runat="server"></asp:Label>
-                        </ContentTemplate>
-                        </asp:UpdatePanel>
-                        </td>
+                         </td>
 
                     </tr>
                     <tr>
