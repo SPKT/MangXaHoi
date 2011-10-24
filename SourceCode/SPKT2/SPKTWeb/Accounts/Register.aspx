@@ -13,26 +13,44 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="mainLeft_under" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="mainCenter" runat="server">
-
+                        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
      <table border="0"  height:243px;" style="width: 602px">
                  <a class="divContainerTitle" style="height: 65px; width: 370px; color: #FF0000; font-size: x-large; font-weight: bold;">Đăng Ký Tài Khoản</a><br />
                    
                     <tr>
-                        <td align="Right" 
+                        <td align="right" 
                             style="color: #0000FF; font-size: large;" class="style105">
-                            Tên đăng nhập:</td>
+                            Tên đăng ký:</td>
+
+
                         <td align="left" class="style108">
-                            <asp:TextBox ID="txtUserName" runat="server" BorderStyle="Inset" BorderWidth="2px" 
-                                Height="22px" Width="170px"></asp:TextBox>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                       <ContentTemplate>
+                            <asp:TextBox ID="txtUserName" AutoPostBack="true" runat="server" 
+                                BorderStyle="Inset" BorderWidth="2px" 
+                                Height="22px" Width="170px" ontextchanged="txtUserName_TextChanged"></asp:TextBox>
+                            <asp:Label ID="lblCheckUsername" runat="server"></asp:Label>
+                             </ContentTemplate>
+                         </asp:UpdatePanel>
                         </td>
+                       
+
                     </tr>
                     <tr>
                         <td align="right" 
                             style="color: #0000FF; font-size: large;" class="style106">
                             Mật khẩu:</td>
                         <td align="left" class="style109">
-                            <asp:TextBox ID="txtPassword" runat="server" BorderStyle="Inset" BorderWidth="2px" 
-                                Height="21px" TextMode="Password" Width="171px"></asp:TextBox>
+                        <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                        <ContentTemplate>
+                            <asp:TextBox ID="txtPassword" AutoPostBack="true" runat="server" 
+                                BorderStyle="Inset" BorderWidth="2px" 
+                                Height="21px"  Width="171px" TextMode="Password"
+                                ontextchanged="txtPassword_TextChanged"></asp:TextBox>
+                            <asp:Label ID="lblMessageLegthPass" runat="server"></asp:Label>
+                        </ContentTemplate>
+                        </asp:UpdatePanel>
                         </td>
                     </tr>
                     <tr>
@@ -40,9 +58,17 @@
                             style="color: #0000FF; font-size: large;" class="style106">
                             Nhắc lại Mật khẩu:</td>
                         <td align="left" class="style109">
-                            <asp:TextBox ID="txtPasswordPre" runat="server" BorderStyle="Inset" BorderWidth="2px" 
-                                Height="21px" TextMode="Password" Width="171px"></asp:TextBox>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <asp:TextBox ID="txtPasswordPre" AutoPostBack="true" runat="server" 
+                                BorderStyle="Inset" BorderWidth="2px" 
+                                Height="21px" TextMode="Password" Width="171px" 
+                                ontextchanged="txtPasswordPre_TextChanged"></asp:TextBox>
+                            <asp:Label ID="lblMessagepass" runat="server"></asp:Label>
+                        </ContentTemplate>
+                        </asp:UpdatePanel>
                         </td>
+
                     </tr>
                     <tr>
                         <td align="right" 

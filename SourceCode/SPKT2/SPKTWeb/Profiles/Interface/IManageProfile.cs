@@ -12,5 +12,6 @@ namespace SPKTWeb.Profiles.Interface
         void LoadLevelOfExperienceTypes(List<LevelOfExperience> types);
         void loadProfileAttribute(List<ProfileAttributeType> profileAttributeType,Profile profile);
         void LoadProfile(Profile profile);
+        void ShowProfileName(string profileName);
     }
 }

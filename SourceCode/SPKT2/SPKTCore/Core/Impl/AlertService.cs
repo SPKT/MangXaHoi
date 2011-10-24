@@ -20,9 +20,6 @@ namespace SPKTCore.Core.Impl
         private string[] tags = { "[rootUrl]" };
         public AlertService()
         {
-            //_userSession = ObjectFactory.GetInstance<IUserSession>();
-            //_alertRepository = ObjectFactory.GetInstance<IAlertRepository>();
-            //_webContext = ObjectFactory.GetInstance<IWebContext>();
             _userSession = new UserSession();
             _alertRepository = new AlertRepository();
             _webContext = new WebContext();
@@ -61,7 +58,7 @@ namespace SPKTCore.Core.Impl
         {
             Init();
             alertMessage = "<div class=\"AlertHeader\">" + GetProfileUrl(account.UserName) +
-                           " just created their profile!</div>";
+                           " vừa mới tạo Profile</div>";
             alertMessage += "<div class=\"AlertRow\">" + GetSendMessageUrl(account.AccountID) + "</div>";
             alert.CreateDate = DateTime.Now;
             alert.Message = alertMessage;
@@ -84,7 +81,7 @@ namespace SPKTCore.Core.Impl
             Init();
             alertMessage =
                 "<div class=\"AlertHeader\"><img src=\"[rootUrl]images/ProfileAvatar/ProfileImage.aspx?AccountID=" +
-                account.AccountID.ToString() + "\" width=\"100\" height=\"100\" align=\"absmiddle\">" + GetProfileUrl(account.UserName) + " added a new avatar.</div>";
+                account.AccountID.ToString() + "\" width=\"100\" height=\"100\" align=\"absmiddle\">" + GetProfileUrl(account.UserName) + " đổi avatar mới.</div>";
             alert.Message = alertMessage;
             alert.AlertTypeID = (int)AlertType.AlertTypes.NewAvatar;
             SaveAlert(alert);
@@ -123,7 +120,7 @@ namespace SPKTCore.Core.Impl
 
         private string GetSendMessageUrl(Int32 AccountID)
         {
-            return "Click here to send message";
+            return "Nhấp vào đây để gửi tin nhắn";
         }
     }
 }

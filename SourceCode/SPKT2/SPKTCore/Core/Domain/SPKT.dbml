@@ -150,4 +150,10 @@
       <Association Name="ProfileAttributeType_ProfileAttributeName" Member="ProfileAttributeType" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttributeType" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ParameterInt" Member="ParameterInts">
+    <Type Name="ParameterInt">
+      <Column Name="ParameterName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterContent" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

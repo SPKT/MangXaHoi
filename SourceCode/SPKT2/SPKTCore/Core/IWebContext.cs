@@ -19,7 +19,9 @@ namespace SPKTCore.Core
         string CaptchaImageText { get; set; }
         string GetQueryStringValue(string key);
         String UsernameToVerify { get; }
-
+        bool ShowGravatar { get; }
         string RootUrl { get; }
+        Int32 AccountID { get; }
+
     }
 }

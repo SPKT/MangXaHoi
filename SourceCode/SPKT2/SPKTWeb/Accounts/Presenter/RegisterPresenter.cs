@@ -15,27 +15,23 @@ namespace SPKTWeb.Accounts.Presenter
     public class RegisterPresenter
     {
         private IRegister _view;
-        //private IAccountRepository _accountRepository;
-        //private IPermissionRepository _permissionRepository;
         private IAccountService _accountService;
         private IWebContext _webContext;
         private IEmail _email;
         private IRedirector _redirector;
-
-        public void Init(IRegister View)
+        private IParameterIntService _parameterIntService;
+        public RegisterPresenter()
         {
-            _view = View;
-            /*_accountRepository = ObjectFactory.GetInstance<IAccountRepository>();
-            _permissionRepository = ObjectFactory.GetInstance<IPermissionRepository>();
-             _accountService = ObjectFactory.GetInstance<IAccountService>();
-            _webContext = ObjectFactory.GetInstance<IWebContext>();
-            _email = ObjectFactory.GetInstance<IEmail>();*/
-            //_accountRepository = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
-            //_permissionRepository = new SPKTCore.Core.DataAccess.Impl.PermissionRepository();
             _accountService = new AccountService();
             _webContext = new WebContext();
             _email = new Email();
             _redirector = new Redirector();
+            _parameterIntService = new ParameterIntService();
+        }
+        public void Init(IRegister View)
+        {
+            _view = View;
+
         }
 
         public void LoginLinkClicked()
@@ -72,14 +68,6 @@ namespace SPKTWeb.Accounts.Presenter
                 {
                     string permission = Object.ToString();
                     _accountService.Register(a, permission);
-                    //_accountRepository.SaveAccount(a);
-                    //Permission publicPermission = _permissionRepository.GetPermissionByName(Object.ToString());
-                    //Permission registeredPermission = _permissionRepository.GetPermissionByName("Registered");
-                    //SPKTCore.Core.Domain.Account newAccount = _accountRepository.GetAccountByUsername(Username);
-
-                    //_accountRepository.AddPermission(newAccount, publicPermission);
-                    //_accountRepository.AddPermission(newAccount, registeredPermission);
-                    //_email.SendEmailAddressVerificationEmail(a.UserName, a.Email);
                     _redirector.GoToAccountLoginPage();
                 }
             }
@@ -88,6 +76,57 @@ namespace SPKTWeb.Accounts.Presenter
                 _view.ShowErrorMessage("CAPTCHA bạn nhập không đúng! Vui lòng nhập lại");
             }
 
+        }
+
+        public bool CheckUserName(string username)
+        {
+            if (_accountService.UsernameInUse(username))
+            {
+                _view.LoadMessageCheckUserName("Tên đăng ký đã tồn tại");
+                return false;
+            }
+            else
+            {
+                _view.LoadMessageCheckUserName("");
+                return true;
+            }
+        }
+
+        public bool CheckPassword(string PasswordPre, string Password)
+        {
+            if (PasswordPre == Password)
+            {
+                _view.LoadMessagePassWord("");
+                return true;
+            }
+            else
+            {
+                _view.LoadMessagePassWord("Hai mật khẩu không giống nhau");
+                return false;
+            }
+
+        }
+
+        public bool CheckPasswordLength(string password)
+        {
+            int dkmin = _parameterIntService.GetParameterIntByName("PasswordMin");
+            int dkmax = _parameterIntService.GetParameterIntByName("PasswordMax");
+            if (password.Length < dkmin)
+            {
+                _view.LoadMessagePassWordLength("Mật khẩu bảo mật quá yếu");
+                return false;
+            }
+            else if (password.Length > dkmax)
+            {
+                _view.LoadMessagePassWordLength("Mật khẩu quá dài");
+                return false;
+            }
+            else
+            {
+                _view.LoadMessagePassWordLength("");
+                return true;
+            }
+            
         }
     }
 }

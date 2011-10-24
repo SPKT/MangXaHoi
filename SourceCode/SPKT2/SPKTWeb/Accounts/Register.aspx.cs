@@ -42,15 +42,51 @@ namespace SPKTWeb.Accounts
             lblErrorMessage.Text = Message;
         }
 
-
-
-
-
         public void LoadEmailAddressFromFriendInvitation(string Email)
         {
             throw new NotImplementedException();
         }
 
+        protected void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+            string username = txtUserName.Text;
+            if (_Presenter.CheckUserName(txtUserName.Text))
+                txtUserName.Text = username;
+            else
+                txtUserName.Text = null;
+        }
 
-  }
+        public void LoadMessageCheckUserName(string Message)
+        {
+            lblCheckUsername.Text = Message;
+        }
+
+        protected void txtPasswordPre_TextChanged(object sender, EventArgs e)
+        {
+            string passpre = txtPasswordPre.Text;
+            if (_Presenter.CheckPassword(txtPasswordPre.Text, txtPassword.Text))
+                txtPasswordPre.Text = passpre;
+            else
+                txtPasswordPre.Text = null;
+
+        }
+
+        protected void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+          string pass=txtPassword.Text;
+          if (_Presenter.CheckPasswordLength(pass))
+              txtPassword.Text = pass;
+          else
+              txtPassword.Text = null;
+        }
+
+        public void LoadMessagePassWord(string Message)
+        {
+            lblMessagepass.Text = Message;
+        }
+        public void LoadMessagePassWordLength(string Message)
+        {
+            lblMessageLegthPass.Text = Message;
+        }
+    }
 }

@@ -44,6 +44,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -66,6 +67,38 @@
     <Content Include="AddData.aspx" />
     <Content Include="Homes\Home.aspx" />
     <Content Include="Image\CaptChaIma.aspx" />
+    <Content Include="Image\ProfileAvatar.aspx" />
+    <Content Include="js\cropper\cropper.css" />
+    <Content Include="js\cropper\cropper.js" />
+    <Content Include="js\cropper\cropper.uncompressed.js" />
+    <Content Include="js\cropper\lib\builder.js" />
+    <Content Include="js\cropper\lib\controls.js" />
+    <Content Include="js\cropper\lib\dragdrop.js" />
+    <Content Include="js\cropper\lib\effects.js" />
+    <Content Include="js\cropper\lib\prototype.js" />
+    <Content Include="js\cropper\lib\scriptaculous.js" />
+    <Content Include="js\cropper\lib\slider.js" />
+    <Content Include="js\cropper\lib\unittest.js" />
+    <Content Include="js\cropper\licence.txt" />
+    <Content Include="js\cropper\marqueeHoriz.gif" />
+    <Content Include="js\cropper\marqueeVert.gif" />
+    <Content Include="js\cropper\tests\castle.jpg" />
+    <Content Include="js\cropper\tests\castleMed.jpg" />
+    <Content Include="js\cropper\tests\example-Basic.htm" />
+    <Content Include="js\cropper\tests\example-CoordsOnLoad.htm" />
+    <Content Include="js\cropper\tests\example-CoordsOnLoadWithRatio.htm" />
+    <Content Include="js\cropper\tests\example-CSS-Absolute.htm" />
+    <Content Include="js\cropper\tests\example-CSS-Float.htm" />
+    <Content Include="js\cropper\tests\example-CSS-Relative.htm" />
+    <Content Include="js\cropper\tests\example-Dimensions.htm" />
+    <Content Include="js\cropper\tests\example-DynamicImage.htm" />
+    <Content Include="js\cropper\tests\example-FixedRatio.htm" />
+    <Content Include="js\cropper\tests\example-MinimumDimensions.htm" />
+    <Content Include="js\cropper\tests\example-MinimumWidth.htm" />
+    <Content Include="js\cropper\tests\example-Preview.htm" />
+    <Content Include="js\cropper\tests\poppy.jpg" />
+    <Content Include="js\cropper\tests\staticHTMLStructure.htm" />
+    <Content Include="Profiles\UploadAvatar.aspx" />
     <Content Include="Picture\banner.jpg" />
     <Content Include="Picture\bg_img.png" />
     <Content Include="Picture\blog.jpg" />
@@ -147,7 +180,6 @@
     <Content Include="Picture\top_text.gif" />
     <Content Include="Picture\t_c.png" />
     <Content Include="Profiles\ManageProfile.aspx" />
-    <Content Include="Profiles\Test.aspx" />
     <Content Include="Profiles\UserControls\ProfileAttributeControl.ascx" />
     <Content Include="Profiles\UserControls\ProfileAttributeControlFull.ascx" />
     <Content Include="Profiles\UserProfile.aspx" />
@@ -257,6 +289,20 @@
     <Compile Include="Image\CaptChaIma.aspx.designer.cs">
       <DependentUpon>CaptChaIma.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Image\ProfileAvatar.aspx.cs">
+      <DependentUpon>ProfileAvatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Image\ProfileAvatar.aspx.designer.cs">
+      <DependentUpon>ProfileAvatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UploadAvatar.aspx.cs">
+      <DependentUpon>UploadAvatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UploadAvatar.aspx.designer.cs">
+      <DependentUpon>UploadAvatar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,6 +311,7 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Profiles\Interface\IManageProfile.cs" />
+    <Compile Include="Profiles\Interface\IUploadNewAvatar.cs" />
     <Compile Include="Profiles\Interface\IUserProfile.cs" />
     <Compile Include="Profiles\ManageProfile.aspx.cs">
       <DependentUpon>ManageProfile.aspx</DependentUpon>
@@ -273,15 +320,10 @@
     <Compile Include="Profiles\ManageProfile.aspx.designer.cs">
       <DependentUpon>ManageProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Profiles\Interface\IUploadAvatar.cs" />
     <Compile Include="Profiles\Presenter\ManageProfilePresenter.cs" />
+    <Compile Include="Profiles\Presenter\UploadAvatarPresenter.cs" />
     <Compile Include="Profiles\Presenter\UserProfilePresenter.cs" />
-    <Compile Include="Profiles\Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Profiles\Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Profiles\UserControls\ProfileAttributeControl.ascx.cs">
       <DependentUpon>ProfileAttributeControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

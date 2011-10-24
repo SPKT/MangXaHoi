@@ -204,6 +204,14 @@ namespace SPKTCore.Core.Domain
 				return this.GetTable<ProfileAttributeName>();
 			}
 		}
+		
+		public System.Data.Linq.Table<ParameterInt> ParameterInts
+		{
+			get
+			{
+				return this.GetTable<ParameterInt>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AccountPermission")]
@@ -3342,6 +3350,51 @@ namespace SPKTCore.Core.Domain
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ParameterInt")]
+	public partial class ParameterInt
+	{
+		
+		private string _ParameterName;
+		
+		private int _ParameterContent;
+		
+		public ParameterInt()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParameterName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string ParameterName
+		{
+			get
+			{
+				return this._ParameterName;
+			}
+			set
+			{
+				if ((this._ParameterName != value))
+				{
+					this._ParameterName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParameterContent", DbType="Int NOT NULL")]
+		public int ParameterContent
+		{
+			get
+			{
+				return this._ParameterContent;
+			}
+			set
+			{
+				if ((this._ParameterContent != value))
+				{
+					this._ParameterContent = value;
+				}
 			}
 		}
 	}

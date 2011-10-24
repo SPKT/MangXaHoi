@@ -4,10 +4,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="mainLeft_above" runat="server">
     <div>
     <div>
-    <asp:Image ID="imaAvatar" runat="server" />
+    <img src="~/Image/ProfileAvatar.aspx" alt="test image" id="testImage" width="100" height="75" runat="server" />
     </div>
     <div>
-    <asp:HyperLink ID="hlkChangePassword" runat="server" Text="Đổi Avatar"></asp:HyperLink>
+        <asp:LinkButton  ID="lbtnChangeAvatar" runat="server" Text="Đối Avatar"
+            onclick="lbtnChangeAvatar_Click" ></asp:LinkButton>
     </div>
     <div>
     <asp:Label ID="lblProfileName" runat="server"></asp:Label>
@@ -19,14 +20,14 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="mainCenter" runat="server">
 <div>
     <div>
-        <asp:Wizard ID="Wizard1" runat="server" ActiveStepIndex="0" 
+        <asp:Wizard EnableViewState="true" ID="Wizard1" runat="server" ActiveStepIndex="0" 
             BackColor="LemonChiffon" BorderStyle="Groove" BorderWidth="2px" 
             CellPadding="10" FinishCompleteButtonText="Lưu" 
             FinishPreviousButtonText="Trước" 
             onfinishbuttonclick="Wizard1_FinishButtonClick" StartNextButtonText="Tiếp" 
             StepNextButtonText="Tiếp" StepPreviousButtonText="Trước">
             <WizardSteps>
-                <asp:WizardStep ID="WizardStep1" runat="server" Title="Quảnlýthôngtincánhân">
+                <asp:WizardStep EnableViewState="true" ID="WizardStep1" runat="server" Title="Quảnlýthôngtincánhân">
                 <asp:Panel runat="server">
                     <a style="height: 65px; width: 370px; color: #FF0000; font-size: x-large; font-weight: bold;"> Quản lý thông tin cá nhân</a>
                     <br />
@@ -84,7 +85,7 @@
             </asp:WizardStep>
             <asp:wizardStep ID="WinzardStep2" runat="server" Title="Thôngtin">
                 <asp:Panel runat="server">
-                    <div id="ProfileAttribute" runat="server">
+                    <div id="divProfileAttribute" runat="server">
                         <asp:Label ID="lblError" runat="server"></asp:Label>
                     </div>
                 </asp:Panel>
