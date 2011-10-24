@@ -42,7 +42,7 @@ namespace SPKTCore.Core.DataAccess.Impl
                 account = (from a in spktDC.Accounts
                            where a.Email == email
                            select a).FirstOrDefault();
-              }
+            }
             return account;
         }
         public Account GetAccountByUsername(string Username)

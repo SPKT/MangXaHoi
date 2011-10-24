@@ -1,110 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SPKT" Class="SPKTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=SPKT;Integrated Security=True" SettingsObjectName="SPKTCore.Properties.Settings" SettingsPropertyName="SPKTConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LI-PC;Initial Catalog=SPKT;Integrated Security=True" SettingsObjectName="SPKTCore.Properties.Settings" SettingsPropertyName="SPKTConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="EmailVerified" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Account_AccountPermission" Member="AccountPermissions" ThisKey="AccountID" OtherKey="AccountID" Type="AccountPermission" />
+      <Association Name="Account_Alert" Member="Alerts" ThisKey="AccountID" OtherKey="AccountID" Type="Alert" />
+      <Association Name="Account_Friend" Member="Friends" ThisKey="AccountID" OtherKey="AccountID" Type="Friend" />
+      <Association Name="Account_Friend1" Member="Friends1" ThisKey="AccountID" OtherKey="MyFriendAccountID" Type="Friend" />
+      <Association Name="Account_FriendInvitation" Member="FriendInvitations" ThisKey="AccountID" OtherKey="AccountID" Type="FriendInvitation" />
+      <Association Name="Account_Profile" Member="Profiles" ThisKey="AccountID" OtherKey="AccountID" Type="Profile" />
+      <Association Name="Account_StatusUpdate" Member="StatusUpdates" ThisKey="AccountID" OtherKey="AccountID" Type="StatusUpdate" />
+    </Type>
+  </Table>
   <Table Name="dbo.AccountPermission" Member="AccountPermissions">
     <Type Name="AccountPermission">
       <Column Name="ApID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PermissionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Association Name="Permission_AccountPermission" Member="Permission" ThisKey="PermissionID" OtherKey="PermissionID" Type="Permission" IsForeignKey="true" />
       <Association Name="Account_AccountPermission" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Permission" Member="Permissions">
-    <Type Name="Permission">
-      <Column Name="PermissionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Association Name="Permission_AccountPermission" Member="AccountPermissions" ThisKey="PermissionID" OtherKey="PermissionID" Type="AccountPermission" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Account" Member="Accounts">
-    <Type Name="Account">
-      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UserName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="EmailVerified" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime" IsDbGenerated="true" CanBeNull="true" />
-      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="DisplayName" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
-      <Association Name="Account_AccountPermission" Member="AccountPermissions" ThisKey="AccountID" OtherKey="AccountID" Type="AccountPermission" />
-      <Association Name="Account_StatusUpdate" Member="StatusUpdates" ThisKey="AccountID" OtherKey="AccountID" Type="StatusUpdate" />
-      <Association Name="Account_Alert" Member="Alerts" ThisKey="AccountID" OtherKey="AccountID" Type="Alert" />
-      <Association Name="Account_Profile" Member="Profiles" ThisKey="AccountID" OtherKey="AccountID" Type="Profile" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PrivacyFlag" Member="PrivacyFlags">
-    <Type Name="PrivacyFlag">
-      <Column Name="PrivacyFlagID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ProfileAttributeTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="VisibilityLevelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Association Name="ProfileAttributeType_PrivacyFlag" Member="ProfileAttributeType" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttributeType" IsForeignKey="true" />
-      <Association Name="VisibilityLevel_PrivacyFlag" Member="VisibilityLevel" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="VisibilityLevel" IsForeignKey="true" />
-      <Association Name="Profile_PrivacyFlag" Member="Profile" ThisKey="ProfileID" OtherKey="ProfileID" Type="Profile" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ProfileAttributeType" Member="ProfileAttributeTypes">
-    <Type Name="ProfileAttributeType">
-      <Column Name="ProfileAttributeTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ProfileAttributeType_PrivacyFlag" Member="PrivacyFlags" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="PrivacyFlag" />
-      <Association Name="ProfileAttributeType_ProfileAttribute" Member="ProfileAttributes" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttribute" />
-      <Association Name="ProfileAttributeType_ProfileAttributeName" Member="ProfileAttributeNames" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttributeName" />
-    </Type>
-  </Table>
-  <Table Name="dbo.StatusUpdate" Member="StatusUpdates">
-    <Type Name="StatusUpdate">
-      <Column Name="StatusUpdateID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="VisibilityLevelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Association Name="Account_StatusUpdate" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
-      <Association Name="VisibilityLevel_StatusUpdate" Member="VisibilityLevel" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="VisibilityLevel" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.VisibilityLevel" Member="VisibilityLevels">
-    <Type Name="VisibilityLevel">
-      <Column Name="VisibilityLevelID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="VisibilityLevel_PrivacyFlag" Member="PrivacyFlags" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="PrivacyFlag" />
-      <Association Name="VisibilityLevel_StatusUpdate" Member="StatusUpdates" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="StatusUpdate" />
-    </Type>
-  </Table>
-  <Table Name="dbo.AlertType" Member="AlertTypes">
-    <Type Name="AlertType">
-      <Column Name="AlertTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AlertTypeName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Association Name="AlertType_Alert" Member="Alerts" ThisKey="AlertTypeID" OtherKey="AlertTypeID" Type="Alert" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LevelOfExperience" Member="LevelOfExperiences">
-    <Type Name="LevelOfExperience">
-      <Column Name="LevelOfExperienceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="LevelOfExperienceName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Column Name="SortOrder" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
-      <Association Name="LevelOfExperience_Profile" Member="Profiles" ThisKey="LevelOfExperienceID" OtherKey="LevelOfExperienceID" Type="Profile" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ProfileAttribute" Member="ProfileAttributes">
-    <Type Name="ProfileAttribute">
-      <Column Name="ProfileAttributeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ProfileAttributeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ProfileAttributeTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Response" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
-      <Association Name="ProfileAttributeType_ProfileAttribute" Member="ProfileAttributeType" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttributeType" IsForeignKey="true" />
-      <Association Name="Profile_ProfileAttribute" Member="Profile" ThisKey="ProfileID" OtherKey="ProfileID" Type="Profile" IsForeignKey="true" />
+      <Association Name="Permission_AccountPermission" Member="Permission" ThisKey="PermissionID" OtherKey="PermissionID" Type="Permission" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Alert" Member="Alerts">
@@ -118,6 +41,66 @@
       <Column Name="Message" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Association Name="Account_Alert" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
       <Association Name="AlertType_Alert" Member="AlertType" ThisKey="AlertTypeID" OtherKey="AlertTypeID" Type="AlertType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AlertType" Member="AlertTypes">
+    <Type Name="AlertType">
+      <Column Name="AlertTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AlertTypeName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="AlertType_Alert" Member="Alerts" ThisKey="AlertTypeID" OtherKey="AlertTypeID" Type="Alert" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Friend" Member="Friends">
+    <Type Name="Friend">
+      <Column Name="FriendID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MyFriendAccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Account_Friend" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="Account_Friend1" Member="Account1" ThisKey="MyFriendAccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FriendInvitation" Member="FriendInvitations">
+    <Type Name="FriendInvitation">
+      <Column Name="FriendInvitationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BecameAccoutnID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Account_FriendInvitation" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LevelOfExperience" Member="LevelOfExperiences">
+    <Type Name="LevelOfExperience">
+      <Column Name="LevelOfExperienceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LevelOfExperienceName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="SortOrder" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="LevelOfExperience_Profile" Member="Profiles" ThisKey="LevelOfExperienceID" OtherKey="LevelOfExperienceID" Type="Profile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Permission" Member="Permissions">
+    <Type Name="Permission">
+      <Column Name="PermissionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Permission_AccountPermission" Member="AccountPermissions" ThisKey="PermissionID" OtherKey="PermissionID" Type="AccountPermission" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PrivacyFlag" Member="PrivacyFlags">
+    <Type Name="PrivacyFlag">
+      <Column Name="PrivacyFlagID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileAttributeTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VisibilityLevelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Profile_PrivacyFlag" Member="Profile" ThisKey="ProfileID" OtherKey="ProfileID" Type="Profile" IsForeignKey="true" />
+      <Association Name="ProfileAttributeType_PrivacyFlag" Member="ProfileAttributeType" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttributeType" IsForeignKey="true" />
+      <Association Name="VisibilityLevel_PrivacyFlag" Member="VisibilityLevel" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="VisibilityLevel" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Profile" Member="Profiles">
@@ -142,12 +125,46 @@
       <Association Name="LevelOfExperience_Profile" Member="LevelOfExperience" ThisKey="LevelOfExperienceID" OtherKey="LevelOfExperienceID" Type="LevelOfExperience" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ProfileAttributeName" Member="ProfileAttributeNames">
-    <Type Name="ProfileAttributeName">
-      <Column Name="ProfileAttributeNameID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+  <Table Name="dbo.ProfileAttribute" Member="ProfileAttributes">
+    <Type Name="ProfileAttribute">
+      <Column Name="ProfileAttributeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileAttributeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ProfileAttributeTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ProfileAttributeName" Member="ProfileAttributeName1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Association Name="ProfileAttributeType_ProfileAttributeName" Member="ProfileAttributeType" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttributeType" IsForeignKey="true" />
+      <Column Name="Response" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Profile_ProfileAttribute" Member="Profile" ThisKey="ProfileID" OtherKey="ProfileID" Type="Profile" IsForeignKey="true" />
+      <Association Name="ProfileAttributeType_ProfileAttribute" Member="ProfileAttributeType" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttributeType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProfileAttributeType" Member="ProfileAttributeTypes">
+    <Type Name="ProfileAttributeType">
+      <Column Name="ProfileAttributeTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ProfileAttributeType_PrivacyFlag" Member="PrivacyFlags" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="PrivacyFlag" />
+      <Association Name="ProfileAttributeType_ProfileAttribute" Member="ProfileAttributes" ThisKey="ProfileAttributeTypeID" OtherKey="ProfileAttributeTypeID" Type="ProfileAttribute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatusUpdate" Member="StatusUpdates">
+    <Type Name="StatusUpdate">
+      <Column Name="StatusUpdateID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="VisibilityLevelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Account_StatusUpdate" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+      <Association Name="VisibilityLevel_StatusUpdate" Member="VisibilityLevel" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="VisibilityLevel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VisibilityLevel" Member="VisibilityLevels">
+    <Type Name="VisibilityLevel">
+      <Column Name="VisibilityLevelID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="VisibilityLevel_PrivacyFlag" Member="PrivacyFlags" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="PrivacyFlag" />
+      <Association Name="VisibilityLevel_StatusUpdate" Member="StatusUpdates" ThisKey="VisibilityLevelID" OtherKey="VisibilityLevelID" Type="StatusUpdate" />
     </Type>
   </Table>
   <Table Name="dbo.ParameterInt" Member="ParameterInts">
