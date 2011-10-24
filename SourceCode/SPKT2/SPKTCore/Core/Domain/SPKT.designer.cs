@@ -75,7 +75,7 @@ namespace SPKTCore.Core.Domain
     #endregion
 		
 		public SPKTDataContext() : 
-				base(global::SPKTCore.Properties.Settings.Default.SPKTConnectionString1, mappingSource)
+				base(global::SPKTCore.Properties.Settings.Default.SPKTConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

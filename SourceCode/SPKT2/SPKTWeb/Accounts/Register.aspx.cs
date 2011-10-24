@@ -29,6 +29,8 @@ namespace SPKTWeb.Accounts
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            if (!this.IsValid)
+                return;
             string passWord=txtPassword.Text;
             string userName = txtUserName.Text;
             string email = txtEmail.Text;
@@ -61,24 +63,24 @@ namespace SPKTWeb.Accounts
             lblCheckUsername.Text = Message;
         }
 
-        protected void txtPasswordPre_TextChanged(object sender, EventArgs e)
-        {
-            string passpre = txtPasswordPre.Text;
-            if (_Presenter.CheckPassword(txtPasswordPre.Text, txtPassword.Text))
-                txtPasswordPre.Text = passpre;
-            else
-                txtPasswordPre.Text = null;
+        //protected void txtPasswordPre_TextChanged(object sender, EventArgs e)
+        //{
+        //    string passpre = txtPasswordPre.Text;
+        //    if (_Presenter.CheckPassword(txtPasswordPre.Text, txtPassword.Text))
+        //        txtPasswordPre.Text = passpre;
+        //    else
+        //        txtPasswordPre.Text = null;
 
-        }
+        //}
 
-        protected void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-          string pass=txtPassword.Text;
-          if (_Presenter.CheckPasswordLength(pass))
-              txtPassword.Text = pass;
-          else
-              txtPassword.Text = null;
-        }
+        //protected void txtPassword_TextChanged(object sender, EventArgs e)
+        //{
+        //  string pass=txtPassword.Text;
+        //  if (_Presenter.CheckPasswordLength(pass))
+        //      txtPassword.Text = pass;
+        //  else
+        //      txtPassword.Text = null;
+        //}
 
         public void LoadMessagePassWord(string Message)
         {
@@ -88,5 +90,36 @@ namespace SPKTWeb.Accounts
         {
             lblMessageLegthPass.Text = Message;
         }
+
+        protected void PasswordCustomValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string passpre = txtPasswordPre.Text;
+            string pass = txtPassword.Text;
+            if (pass != passpre)
+            {
+                PasswordCustomValidator.ErrorMessage = "Mật khẩu nhập lại không khớp";
+                args.IsValid = false;
+                return;
+            }
+
+            if (!_Presenter.CheckPasswordLength(pass))
+            {
+                PasswordCustomValidator.ErrorMessage = "Độ dài mật khẩu chưa đạt";
+                args.IsValid = false;
+                return;
+            }
+        }
+
+        protected void Username_CustomValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string username = txtUserName.Text;
+            if (!_Presenter.CheckUserName(txtUserName.Text))
+            {
+                args.IsValid = false;
+                return;
+            }
+        }
+
+        
     }
 }

@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="SPKTWeb.Accounts.Register" %>
 
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .style104
@@ -25,13 +27,22 @@
 
 
                         <td align="left" class="style108">
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                        <ContentTemplate>
-                            <asp:TextBox ID="txtUserName" runat="server" 
-                                BorderStyle="Inset" BorderWidth="2px" 
-                                Height="22px" Width="170px" ontextchanged="txtUserName_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="txtUserName" AutoPostBack="true" runat="server" 
+                                BorderStyle="Inset" BorderWidth="2px" OnTextChanged="txtUserName_TextChanged" 
+                                Height="22px" Width="170px" CausesValidation="True"></asp:TextBox>
+                         
                             <asp:Label ID="lblCheckUsername" runat="server"></asp:Label>
+                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                ControlToValidate="txtUserName" Display="Dynamic" 
+                                ErrorMessage="Chưa điều Tên đăng ký"></asp:RequiredFieldValidator>
+                             <asp:CustomValidator ID="Username_CustomValidator" runat="server" 
+                                ControlToValidate="txtUserName" Display="Dynamic" 
+                                ErrorMessage="Tên đăng ký đã tồn tại" 
+                                onservervalidate="Username_CustomValidator_ServerValidate"></asp:CustomValidator>
                              </ContentTemplate>
+                           
                          </asp:UpdatePanel>
                         </td>
                        
@@ -40,13 +51,18 @@
                     <tr>
                         <td align="right" 
                             style="color: #0000FF; font-size: large;" class="style106">
-                            Mật khẩu:</td>
+                            Mật khẩu::</td>
                         <td align="left" class="style109">
-                           <asp:TextBox ID="txtPassword" EnableViewState="true" runat="server" 
+                           <asp:TextBox ID="txtPassword" runat="server" 
                                 BorderStyle="Inset" BorderWidth="2px" 
-                                Height="21px"  Width="171px" TextMode="Password"
-                                ontextchanged="txtPassword_TextChanged"></asp:TextBox>
+                                Height="21px"  Width="171px" TextMode="Password"></asp:TextBox>
                             <asp:Label ID="lblMessageLegthPass" runat="server"></asp:Label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                ControlToValidate="txtPassword" Display="Dynamic" 
+                                ErrorMessage="Chưa nhập Mật khẩu">*</asp:RequiredFieldValidator>
+                            <asp:CustomValidator ID="PasswordCustomValidator" runat="server" Display="Dynamic" 
+                                ControlToValidate="txtPassword" ErrorMessage="Mật khẩu quá yếu" 
+                                onservervalidate="PasswordCustomValidator_ServerValidate" ></asp:CustomValidator>
                         </td>
                     </tr>
                     <tr>
@@ -54,11 +70,19 @@
                             style="color: #0000FF; font-size: large;" class="style106">
                             Nhắc lại Mật khẩu:</td>
                         <td align="left" class="style109">
-                            <asp:TextBox ID="txtPasswordPre" AutoPostBack="true" runat="server" 
+                            <asp:TextBox ID="txtPasswordPre" runat="server" 
                                 BorderStyle="Inset" BorderWidth="2px" 
-                                Height="21px" TextMode="Password" Width="171px" 
-                                ontextchanged="txtPasswordPre_TextChanged"></asp:TextBox>
+                                Height="21px" TextMode="Password" Width="171px" ></asp:TextBox>
+                            <asp:PasswordStrength ID="txtPassword_PasswordStrength" runat="server" 
+                                Enabled="True" TargetControlID="txtPassword">
+                            </asp:PasswordStrength>
                             <asp:Label ID="lblMessagepass" runat="server"></asp:Label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                ControlToValidate="txtPasswordPre" ErrorMessage="Chưa nhập lại mật khẩu" 
+                                Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                                ControlToCompare="txtPasswordPre" ControlToValidate="txtPassword" 
+                                Display="Dynamic" ErrorMessage="Mật khẩu nhập lại không đúng"></asp:CompareValidator>
                          </td>
 
                     </tr>
@@ -69,6 +93,11 @@
                         <td align="left" class="style104">
                             <asp:TextBox ID="txtEmail" runat="server" BorderStyle="Inset" BorderWidth="2px" 
                                 Height="21px" Width="170px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Chưa nhập email"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                                ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Không phải email." 
+                                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>
@@ -89,6 +118,9 @@
                         <td align="left" class="style104">
                             <asp:TextBox ID="txtCaptCha" runat="server" BorderStyle="Inset" BorderWidth="2px" 
                                 Height="21px" Width="170px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                ControlToValidate="txtCaptCha" Display="Dynamic" 
+                                ErrorMessage="Chưa nhập Captcha"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                    <tr>
