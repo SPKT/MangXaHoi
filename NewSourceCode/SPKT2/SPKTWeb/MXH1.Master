@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MXH1.master.cs" Inherits="MXH.MXH1" %>
+<%@ Register src="~/Accounts/UserControl/LoginDesign.ascx" tagname="LoginDesign" tagprefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            height: 24px;
+        }
+        .style4C:\Users\li\Downloads\TLCN\SPKT2\SPKTWeb\Accounts\Register.aspx
+        {
+            width: 558px;
+            height: 35px;
+        }
+        .style5
+        {
+            width: 20%;
+            height: 29px;
+        }
+        .style6
+        {
+            height: 29px;
+            width: 10%;
+        }
+        .style7
+        {
+            width: 10%;
+            height: 29px;
+        }
+        .buttonlink a
+        {
+            color:Black;
+        }
+        .buttonlink a:visited
+        {
+            color:Black;
+        }
+        .buttonlink a:hover
+        {
+            color:Red;
+        }
+        .search
+        {
+            border-bottom-color:#0066CC;
+            border-bottom-style:solid;
+            border-bottom-width:1px;
+            Font-Size:Large;
+            Width:267px ;
+            font-family:Times New Roman;
+        }
+        .closeLoginPanel
+        {
+            font-family: Verdana, Helvetica, Arial, sans-serif;
+            line-height: 17px;
+            font-size: 11px;
+            font-weight: bold;
+
+            position: absolute;
+            top:8px;
+            right: 10px;
+        }
+
+        .closeLoginPanel a
+        {
+            background-color: #6699CC; 
+            cursor: pointer;
+            color: #FFFFFF; 
+            text-align: center; 
+            text-decoration: none; 
+            padding: 5px;
+        }
+
+
+        .style14
+        {
+            height: 29px;
+            width: 60%;
+        }
+
+
+    </style>
+    
+   
+</head>
+<body style="margin: 0;background-image:url('/Image/body-bg2.png'); background-repeat:repeat">
+
+<form id="form1" runat="server">
+	<div style=" width: 80%;margin-left: 10%;height: 77px; background-image:url('/Image/bn2.jpg'); background-repeat:repeat; background-color: #000066;">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lb_Login" runat="server" ForeColor="White" Text="[LoginChaoban]"></asp:Label>	
+	</div>
+	<div style=" width: 80%;margin-left: 10%; height: 19px; background-image: url('/Image/block_topbg.gif'); background-repeat: repeat;">
+        <asp:Label ID="Label1" runat="server" Text="  "></asp:Label>
+        &nbsp;<asp:LinkButton ID="lbt_DangKy" runat="server">Đăng Ký</asp:LinkButton>
+        <asp:Label ID="Label2" runat="server" Text="  |"></asp:Label>
+        <asp:LinkButton ID="lbt_DangNhap" runat="server">Đăng Nhập</asp:LinkButton>
+        <asp:Panel ID="loginPanel" runat="server" Style="display: none">
+            <div class="closeLoginPanel">
+                <a onclick="document.body.click(); return false;" title="Fermer">X</a>
+            </div>
+            <uc1:LoginDesign ID="LoginDesign1" runat="server" />
+        </asp:Panel>
+              
+	</div>
+    <div style=" width: 80%;margin-left: 10%;background-image:url('/Image/block_topbg.gif'); height: 65px;">
+        <table class="style1">
+            <tr>
+                <td class="style7">
+                    </td>
+                <td class="style14">
+                    <asp:Panel ID="Panel1" runat="server" BorderColor="#336699" BorderStyle="Solid" 
+                        BorderWidth="1px" Height="25px" 
+                BackImageUrl="~/Image/main_menu_bg.jpg" style="margin-left: 0px" Width="100%" 
+                        HorizontalAlign="Center">
+                        &nbsp;<asp:LinkButton ID="lbt_TinMoi" runat="server" CssClass ="buttonlink" >Tin mới</asp:LinkButton>
+                        &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton5" runat="server" CssClass ="buttonlink">Thông báo</asp:LinkButton>
+                        &nbsp;&nbsp; |&nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButton6" runat="server" CssClass ="buttonlink">Đọc Báo</asp:LinkButton>
+                        &nbsp;&nbsp; |&nbsp;&nbsp; <asp:LinkButton ID="LinkButton7" runat="server">Thông tin trường</asp:LinkButton>
+                    </asp:Panel>
+                </td>
+                <td class="style5" align="right">
+                    <asp:TextBox ID="asbCity" runat="server" BorderStyle="Solid" BorderWidth="1px" 
+                        Width="170px" BorderColor="#3366FF"></asp:TextBox>
+                </td>
+                <td class="style6">
+                    
+                    <asp:Button ID="bt_TimKiem" runat="server" BackColor="#9999FF" 
+                        BorderColor="#0066FF" BorderStyle="Solid" BorderWidth="1px" ForeColor="Black" 
+                        Text="Tìm Kiếm" Width="70px" Font-Bold="True" Font-Names="Constantia" 
+                        Height="20px" onclick="bt_TimKiem_Click" />
+                    
+                </td>
+            </tr>
+            </table>
+    </div>
+	<div style=" width: 80%; height:auto;margin-left: 10%;  background-color: #FFFFFF;  margin-top: 0px;">
+		
+	    <asp:ContentPlaceHolder ID="Main" runat="server">
+        </asp:ContentPlaceHolder>	
+		
+	</div>
+	<div style=" width: 80%;margin-left: 10%; height: 42px; background-image: url('/Image/content_topbg.gif'); background-repeat: repeat;">
+		
+	</div>
+	
+</form>
+
+</body>
+
+
+</html>

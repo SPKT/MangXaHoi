@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B22B5A5-0374-4F80-9FC9-370CB9E887C1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPKTWeb</RootNamespace>
+    <AssemblyName>SPKTWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\code\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\..\Desktop\Structure\deploy\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Accounts\EditAccount.aspx" />
+    <Content Include="Accounts\Login.aspx" />
+    <Content Include="Accounts\RecoverPassword.aspx" />
+    <Content Include="Accounts\Register.aspx" />
+    <Content Include="Accounts\UserControl\LoginDesign.ascx" />
+    <Content Include="Accounts\VerifyEmail.aspx" />
+    <Content Include="AddData.aspx" />
+    <Content Include="App_Data\SPKT.mdf" />
+    <Content Include="App_Data\SPKT_log.ldf">
+      <DependentUpon>SPKT.mdf</DependentUpon>
+    </Content>
+    <Content Include="Friends\ConfirmFriendshipRequest.aspx" />
+    <Content Include="Friends\Invite.aspx" />
+    <Content Include="Friends\ShowFriend.aspx" />
+    <Content Include="Friends\UserControl\FriendProfile.ascx" />
+    <Content Include="Friends\UserControl\InviteFriends.ascx" />
+    <Content Include="Friends\UserControl\ShowFriend.ascx" />
+    <Content Include="Homes\Home.aspx" />
+    <Content Include="Images\01.jpg" />
+    <Content Include="Images\02.jpg" />
+    <Content Include="Images\03.jpg" />
+    <Content Include="Images\04.jpg" />
+    <Content Include="Images\05.jpg" />
+    <Content Include="Images\06.jpg" />
+    <Content Include="Images\07.jpg" />
+    <Content Include="Images\08.jpg" />
+    <Content Include="Images\09.jpg" />
+    <Content Include="Images\10.jpg" />
+    <Content Include="Images\11.jpg" />
+    <Content Include="Images\12.jpg" />
+    <Content Include="Images\13.jpg" />
+    <Content Include="Images\14.jpg" />
+    <Content Include="Images\ALIEN_01_01.PNG" />
+    <Content Include="Images\ALIEN_03_01.PNG" />
+    <Content Include="Images\TENT_01_01.PNG" />
+    <Content Include="Image\ALIEN_01_01.jpg" />
+    <Content Include="Image\ALIEN_01_01.PNG" />
+    <Content Include="Image\bbl-body-bg.png" />
+    <Content Include="Image\bbl-body-bg_2.png" />
+    <Content Include="Image\bbl-head-bg.png" />
+    <Content Include="Image\bbl-head-bg_2.png" />
+    <Content Include="Image\block_topbg.gif" />
+    <Content Include="Image\blog.jpg" />
+    <Content Include="Image\bn2.jpg" />
+    <Content Include="Image\body-bg2.png" />
+    <Content Include="Image\body-bg2_2.png" />
+    <Content Include="Image\body_bg.jpg" />
+    <Content Include="Image\bt2.jpg" />
+    <Content Include="Image\but_razd.gif" />
+    <Content Include="Image\CaptChaIma.aspx" />
+    <Content Include="Image\gray-grad.png" />
+    <Content Include="Image\icon_close.gif" />
+    <Content Include="Image\icon_friends.gif" />
+    <Content Include="Image\main_menu_bg.jpg" />
+    <Content Include="Image\page_top_bkgr.gif" />
+    <Content Include="Image\post_entry_bkgr.png" />
+    <Content Include="Image\ProfileAvatar.aspx" />
+    <Content Include="Image\search.png" />
+    <Content Include="Image\searchbg.png" />
+    <Content Include="js\cropper\cropper.css" />
+    <Content Include="js\cropper\cropper.js" />
+    <Content Include="js\cropper\cropper.uncompressed.js" />
+    <Content Include="js\cropper\lib\builder.js" />
+    <Content Include="js\cropper\lib\controls.js" />
+    <Content Include="js\cropper\lib\dragdrop.js" />
+    <Content Include="js\cropper\lib\effects.js" />
+    <Content Include="js\cropper\lib\prototype.js" />
+    <Content Include="js\cropper\lib\scriptaculous.js" />
+    <Content Include="js\cropper\lib\slider.js" />
+    <Content Include="js\cropper\lib\unittest.js" />
+    <Content Include="js\cropper\licence.txt" />
+    <Content Include="js\cropper\marqueeHoriz.gif" />
+    <Content Include="js\cropper\marqueeVert.gif" />
+    <Content Include="js\cropper\tests\castle.jpg" />
+    <Content Include="js\cropper\tests\castleMed.jpg" />
+    <Content Include="js\cropper\tests\example-Basic.htm" />
+    <Content Include="js\cropper\tests\example-CoordsOnLoad.htm" />
+    <Content Include="js\cropper\tests\example-CoordsOnLoadWithRatio.htm" />
+    <Content Include="js\cropper\tests\example-CSS-Absolute.htm" />
+    <Content Include="js\cropper\tests\example-CSS-Float.htm" />
+    <Content Include="js\cropper\tests\example-CSS-Relative.htm" />
+    <Content Include="js\cropper\tests\example-Dimensions.htm" />
+    <Content Include="js\cropper\tests\example-DynamicImage.htm" />
+    <Content Include="js\cropper\tests\example-FixedRatio.htm" />
+    <Content Include="js\cropper\tests\example-MinimumDimensions.htm" />
+    <Content Include="js\cropper\tests\example-MinimumWidth.htm" />
+    <Content Include="js\cropper\tests\example-Preview.htm" />
+    <Content Include="js\cropper\tests\poppy.jpg" />
+    <Content Include="js\cropper\tests\staticHTMLStructure.htm" />
+    <Content Include="Profiles\UploadAvatar.aspx" />
+    <Content Include="Picture\banner.jpg" />
+    <Content Include="Picture\bg_img.png" />
+    <Content Include="Picture\blog.jpg" />
+    <Content Include="Picture\bn1.jpg" />
+    <Content Include="Picture\bn2.jpg" />
+    <Content Include="Picture\body_bg.jpg" />
+    <Content Include="Picture\bottom_h1.png" />
+    <Content Include="Picture\bottom_h2.png" />
+    <Content Include="Picture\bottom_i1.jpg" />
+    <Content Include="Picture\bottom_i2.jpg" />
+    <Content Include="Picture\box_home.png" />
+    <Content Include="Picture\bt2.jpg" />
+    <Content Include="Picture\but_over.png" />
+    <Content Include="Picture\but_razd.gif" />
+    <Content Include="Picture\but_search.png" />
+    <Content Include="Picture\but_submi_ind5.png" />
+    <Content Include="Picture\Cuoi-2.jpg" />
+    <Content Include="Picture\c_l.png" />
+    <Content Include="Picture\gallery_big1.jpg" />
+    <Content Include="Picture\gallery_big2.jpg" />
+    <Content Include="Picture\gallery_big3.jpg" />
+    <Content Include="Picture\gallery_big4.jpg" />
+    <Content Include="Picture\gallery_big5.jpg" />
+    <Content Include="Picture\gallery_big6.jpg" />
+    <Content Include="Picture\gallery_big7.jpg" />
+    <Content Include="Picture\gallery_big8.jpg" />
+    <Content Include="Picture\gallery_big9.jpg" />
+    <Content Include="Picture\Header.jpg" />
+    <Content Include="Picture\hinh.jpg" />
+    <Content Include="Picture\img1.gif" />
+    <Content Include="Picture\img2.gif" />
+    <Content Include="Picture\img21.jpg" />
+    <Content Include="Picture\img22.jpg" />
+    <Content Include="Picture\img3.gif" />
+    <Content Include="Picture\img31.jpg" />
+    <Content Include="Picture\img32.jpg" />
+    <Content Include="Picture\img33.jpg" />
+    <Content Include="Picture\img34.jpg" />
+    <Content Include="Picture\img35.jpg" />
+    <Content Include="Picture\img36.jpg" />
+    <Content Include="Picture\img37.jpg" />
+    <Content Include="Picture\img38.jpg" />
+    <Content Include="Picture\img39.jpg" />
+    <Content Include="Picture\img41.jpg" />
+    <Content Include="Picture\img_bg_ind3.png" />
+    <Content Include="Picture\input.png" />
+    <Content Include="Picture\input_ind5.png" />
+    <Content Include="Picture\logo.jpg" />
+    <Content Include="Picture\main.jpg" />
+    <Content Include="Picture\main_bg.png" />
+    <Content Include="Picture\menu.gif" />
+    <Content Include="Picture\menu1.gif" />
+    <Content Include="Picture\menu1.jpg" />
+    <Content Include="Picture\menu2.jpg" />
+    <Content Include="Picture\message_ind5.png" />
+    <Content Include="Picture\mn1.gif" />
+    <Content Include="Picture\mn2.jpg" />
+    <Content Include="Picture\mn3.jpg" />
+    <Content Include="Picture\mn4.jpg" />
+    <Content Include="Picture\mn5.jpg" />
+    <Content Include="Picture\nen1.jpg" />
+    <Content Include="Picture\nen2.jpg" />
+    <Content Include="Picture\profile.jpg" />
+    <Content Include="Picture\project1.jpg" />
+    <Content Include="Picture\project2.jpg" />
+    <Content Include="Picture\read.png" />
+    <Content Include="Picture\rol_over_galery.png" />
+    <Content Include="Picture\scroll1.jpg" />
+    <Content Include="Picture\scroll2.jpg" />
+    <Content Include="Picture\scroll3.jpg" />
+    <Content Include="Picture\scroll4.jpg" />
+    <Content Include="Picture\scroll5.jpg" />
+    <Content Include="Picture\scroll_small.png" />
+    <Content Include="Picture\submit.png" />
+    <Content Include="Picture\textarea.png" />
+    <Content Include="Picture\timkiem.jpg" />
+    <Content Include="Picture\top_left.png" />
+    <Content Include="Picture\top_right.png" />
+    <Content Include="Picture\top_text.gif" />
+    <Content Include="Picture\t_c.png" />
+    <Content Include="Profiles\ManageProfile.aspx" />
+    <Content Include="Profiles\UserControls\ProfileAttributeControl.ascx" />
+    <Content Include="Profiles\UserControls\ProfileAttributeControlFull.ascx" />
+    <Content Include="Profiles\UserProfile.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Searchs\Search.aspx" />
+    <Content Include="Style1.css" />
+    <Content Include="Style2.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\CustomMembershipProvider.cs" />
+    <Compile Include="Accounts\EditAccount.aspx.cs">
+      <DependentUpon>EditAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\EditAccount.aspx.designer.cs">
+      <DependentUpon>EditAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Interface\IEditAccount.cs" />
+    <Compile Include="Accounts\Interface\ILogin.cs" />
+    <Compile Include="Accounts\Interface\IRecoverPassword.cs" />
+    <Compile Include="Accounts\Interface\IRegister.cs" />
+    <Compile Include="Accounts\Interface\IVerifyEmail.cs" />
+    <Compile Include="Accounts\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Presenter\EditAccountPresenter.cs" />
+    <Compile Include="Accounts\Presenter\LoginPresenter.cs" />
+    <Compile Include="Accounts\Presenter\RecoverPasswordPresenter.cs" />
+    <Compile Include="Accounts\Presenter\RegisterPresenter.cs" />
+    <Compile Include="Accounts\Presenter\VerifyEmailPresenter.cs" />
+    <Compile Include="Accounts\RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\UserControl\LoginDesign.ascx.cs">
+      <DependentUpon>LoginDesign.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControl\LoginDesign.ascx.designer.cs">
+      <DependentUpon>LoginDesign.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\VerifyEmail.aspx.cs">
+      <DependentUpon>VerifyEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accounts\VerifyEmail.aspx.designer.cs">
+      <DependentUpon>VerifyEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddData.aspx.cs">
+      <DependentUpon>AddData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddData.aspx.designer.cs">
+      <DependentUpon>AddData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\ConfirmFriendshipRequest.aspx.cs">
+      <DependentUpon>ConfirmFriendshipRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\ConfirmFriendshipRequest.aspx.designer.cs">
+      <DependentUpon>ConfirmFriendshipRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\Interface\IConfirmFriendshipRequest.cs" />
+    <Compile Include="Friends\Interface\IInviteFriends.cs" />
+    <Compile Include="Friends\Interface\IProfileDisplay.cs" />
+    <Compile Include="Friends\Interface\IShowFriend.cs" />
+    <Compile Include="Friends\Invite.aspx.cs">
+      <DependentUpon>Invite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\Invite.aspx.designer.cs">
+      <DependentUpon>Invite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\Presenter\ConfirmFriendshipRequestPresenter.cs" />
+    <Compile Include="Friends\Presenter\InviteFriend.cs" />
+    <Compile Include="Friends\Presenter\ProfileDisplayPresenter.cs" />
+    <Compile Include="Friends\Presenter\ShowFriendPresenter.cs" />
+    <Compile Include="Friends\ShowFriend.aspx.cs">
+      <DependentUpon>ShowFriend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\ShowFriend.aspx.designer.cs">
+      <DependentUpon>ShowFriend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendProfile.ascx.cs">
+      <DependentUpon>FriendProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendProfile.ascx.designer.cs">
+      <DependentUpon>FriendProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\InviteFriends.ascx.cs">
+      <DependentUpon>InviteFriends.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\InviteFriends.ascx.designer.cs">
+      <DependentUpon>InviteFriends.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\ShowFriend.ascx.cs">
+      <DependentUpon>ShowFriend.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\ShowFriend.ascx.designer.cs">
+      <DependentUpon>ShowFriend.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Homes\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homes\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Homes\Interface\IHome.cs" />
+    <Compile Include="Homes\Presenter\HomePresenter.cs" />
+    <Compile Include="Image\CaptChaIma.aspx.cs">
+      <DependentUpon>CaptChaIma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Image\CaptChaIma.aspx.designer.cs">
+      <DependentUpon>CaptChaIma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Image\ProfileAvatar.aspx.cs">
+      <DependentUpon>ProfileAvatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Image\ProfileAvatar.aspx.designer.cs">
+      <DependentUpon>ProfileAvatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MXH1.Master.cs">
+      <DependentUpon>MXH1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MXH1.Master.designer.cs">
+      <DependentUpon>MXH1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UploadAvatar.aspx.cs">
+      <DependentUpon>UploadAvatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UploadAvatar.aspx.designer.cs">
+      <DependentUpon>UploadAvatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\Interface\IManageProfile.cs" />
+    <Compile Include="Profiles\Interface\IUploadNewAvatar.cs" />
+    <Compile Include="Profiles\Interface\IUserProfile.cs" />
+    <Compile Include="Profiles\ManageProfile.aspx.cs">
+      <DependentUpon>ManageProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\ManageProfile.aspx.designer.cs">
+      <DependentUpon>ManageProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\Interface\IUploadAvatar.cs" />
+    <Compile Include="Profiles\Presenter\ManageProfilePresenter.cs" />
+    <Compile Include="Profiles\Presenter\UploadAvatarPresenter.cs" />
+    <Compile Include="Profiles\Presenter\UserProfilePresenter.cs" />
+    <Compile Include="Profiles\UserControls\ProfileAttributeControl.ascx.cs">
+      <DependentUpon>ProfileAttributeControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControl.ascx.designer.cs">
+      <DependentUpon>ProfileAttributeControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControlFull.ascx.cs">
+      <DependentUpon>ProfileAttributeControlFull.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserControls\ProfileAttributeControlFull.ascx.designer.cs">
+      <DependentUpon>ProfileAttributeControlFull.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiles\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Searchs\Interface\ISearch.cs" />
+    <Compile Include="Searchs\Presenter\SearchPresenter.cs" />
+    <Compile Include="Searchs\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Searchs\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Searchs\UserControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StrutureMap.config" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="MXH1.Master" />
+    <None Include="Picture\Untitled-1.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPKTCore\SPKTCore.csproj">
+      <Project>{934FF6C8-BFA0-41B5-89F1-A8AB887E1DC3}</Project>
+      <Name>SPKTCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4120</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
