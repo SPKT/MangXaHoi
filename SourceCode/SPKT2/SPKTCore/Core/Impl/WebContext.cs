@@ -11,7 +11,29 @@ namespace SPKTCore.Core.Impl
     [Pluggable("Default")]
     public class WebContext : IWebContext
     {
-        
+        public bool ShowGravatar
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(GetQueryStringValue("ShowGravatar")) && GetQueryStringValue("ShowGravatar") == "1")
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public Int32 AccountID
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(GetQueryStringValue("AccountID")))
+                {
+                    return Convert.ToInt32(GetQueryStringValue("AccountID"));
+                }
+                return 0;
+            }
+        }
         public string CaptchaImageText
         {
             get
@@ -225,6 +247,8 @@ namespace SPKTCore.Core.Impl
                 return result;
             }
         }
+
+
     }
 
  }

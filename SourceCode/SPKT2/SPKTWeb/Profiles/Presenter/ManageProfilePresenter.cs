@@ -63,7 +63,9 @@ namespace SPKTWeb.Profiles.Presenter
                     AddProfileAttribute(_listProfileAttributeType, profile);
                    
                 }
-                _view.LoadProfile(profile);
+                //_view.LoadProfile(profile);
+                _view.ShowProfileName(profile.profileName);
+                LoadProfile(IsPostback);
             }
             else
             {
@@ -127,6 +129,11 @@ namespace SPKTWeb.Profiles.Presenter
         public void SaveAttribute(ProfileAttribute attribute)
         {
             _profileAttributeService.SaveProfileAttribute(attribute);
+        }
+
+        public void GotoUpdateAvatar()
+        {
+            _redirector.Redirect("~/Profiles/UpLoadAvatar.aspx");
         }
     }
 }

@@ -61,8 +61,10 @@
     <Compile Include="Core\DataAccess\Impl\EnumObject.cs" />
     <Compile Include="Core\DataAccess\IConfiguration.cs" />
     <Compile Include="Core\DataAccess\Impl\LevelOfExperienceRepository.cs" />
+    <Compile Include="Core\DataAccess\Impl\ParameterIntRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\PrivacyRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\ProfileAttributeRepository.cs" />
+    <Compile Include="Core\DataAccess\IParameterIntRepository.cs" />
     <Compile Include="Core\DataAccess\IPrivacyRepository.cs" />
     <Compile Include="Core\DataAccess\IProfileAttributeRepository.cs" />
     <Compile Include="Core\DataAccess\Impl\ProfileRepository.cs" />
@@ -87,10 +89,12 @@
     <Compile Include="Core\Impl\Cryptography.cs" />
     <Compile Include="Core\Impl\Extendsion.cs" />
     <Compile Include="Core\IAlertService.cs" />
+    <Compile Include="Core\Impl\ParameterIntService.cs" />
     <Compile Include="Core\Impl\PrivacyService.cs" />
     <Compile Include="Core\Impl\ProfileAttributeService.cs" />
     <Compile Include="Core\Impl\ProfileService.cs" />
     <Compile Include="Core\Impl\UserSession.cs" />
+    <Compile Include="Core\IParameterIntService.cs" />
     <Compile Include="Core\IPrivacyService.cs" />
     <Compile Include="Core\IProfileAttributeService.cs" />
     <Compile Include="Core\IProfileService.cs" />

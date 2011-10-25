@@ -56,6 +56,7 @@ namespace SPKTWeb
                                                DateTime.MinValue,
                                                DateTime.MinValue,
                                               DateTime.Now, DateTime.Now);
+                
                    return memUser;
             }
             return null;
@@ -157,7 +158,9 @@ namespace SPKTWeb
 
         public override MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out MembershipCreateStatus status)
         {
-            throw new NotImplementedException();
+            status = MembershipCreateStatus.Success;
+            return new MembershipUser("CustomMembershipProvider", username, providerUserKey, email, passwordQuestion, passwordAnswer, isApproved, true,DateTime.Now,DateTime.Now,DateTime.Now,DateTime.Now,DateTime.Now);
+            
         }
 
         public override bool DeleteUser(string username, bool deleteAllRelatedData)

@@ -16,5 +16,7 @@ namespace SPKTCore.Core
         void GoToAccountEditAccountPage();
         void GoToAccountRecoverPasswordPage();
         void GoToAccountAccessDenied();
+
+        void GoToProfilesProfile();
     }
 }

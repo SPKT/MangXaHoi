@@ -13,22 +13,22 @@ namespace SPKTWeb.Profiles {
     public partial class ManageProfile {
         
         /// <summary>
-        /// imaAvatar control.
+        /// testImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imaAvatar;
+        protected global::System.Web.UI.HtmlControls.HtmlImage testImage;
         
         /// <summary>
-        /// hlkChangePassword control.
+        /// lbtnChangeAvatar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlkChangePassword;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnChangeAvatar;
         
         /// <summary>
         /// lblProfileName control.
@@ -112,13 +112,13 @@ namespace SPKTWeb.Profiles {
         protected global::System.Web.UI.WebControls.WizardStep WinzardStep2;
         
         /// <summary>
-        /// ProfileAttribute control.
+        /// divProfileAttribute control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProfileAttribute;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divProfileAttribute;
         
         /// <summary>
         /// lblError control.

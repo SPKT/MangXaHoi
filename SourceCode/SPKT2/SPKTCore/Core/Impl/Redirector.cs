@@ -55,8 +55,14 @@ namespace SPKTCore.Core.Impl
 
         public void GotoHomePage()
         {
-            throw new NotImplementedException();
+            Redirect("~/Home/Home.aspx");
         }
 
+
+
+        public void GoToProfilesProfile()
+        {
+            Redirect("~/Profiles/UserProfile.aspx");
+        }
     }
 }

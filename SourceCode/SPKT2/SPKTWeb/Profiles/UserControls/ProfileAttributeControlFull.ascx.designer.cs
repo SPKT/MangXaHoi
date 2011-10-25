@@ -13,120 +13,111 @@ namespace SPKTWeb.Profiles.UserControls {
     public partial class ProfileAttributeControlFull {
         
         /// <summary>
-        /// txtquequan control.
+        /// Wizard1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtquequan;
+        protected global::System.Web.UI.WebControls.Wizard Wizard1;
         
         /// <summary>
-        /// txtnoiohientai control.
+        /// WizardStep1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtnoiohientai;
+        protected global::System.Web.UI.WebControls.WizardStep WizardStep1;
         
         /// <summary>
-        /// txtdaihoc control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdaihoc;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// txtcap3 control.
+        /// txtProfileName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcap3;
+        protected global::System.Web.UI.WebControls.TextBox txtProfileName;
         
         /// <summary>
-        /// txtcap2 control.
+        /// txtTenThat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcap2;
+        protected global::System.Web.UI.WebControls.TextBox txtTenThat;
         
         /// <summary>
-        /// txtcap1 control.
+        /// txtNgaySinh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcap1;
+        protected global::System.Web.UI.WebControls.TextBox txtNgaySinh;
         
         /// <summary>
-        /// txtJob control.
+        /// txtSex control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtJob;
+        protected global::System.Web.UI.WebControls.TextBox txtSex;
         
         /// <summary>
-        /// txtOtherJob control.
+        /// txtChuKy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOtherJob;
+        protected global::System.Web.UI.WebControls.TextBox txtChuKy;
         
         /// <summary>
-        /// txtColor control.
+        /// WinzardStep2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtColor;
+        protected global::System.Web.UI.WebControls.WizardStep WinzardStep2;
         
         /// <summary>
-        /// txtSong control.
+        /// Panel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSong;
+        protected global::System.Web.UI.WebControls.Panel Panel2;
         
         /// <summary>
-        /// txtDienAnh control.
+        /// divProfileAttribute control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDienAnh;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divProfileAttribute;
         
         /// <summary>
-        /// txtEsle control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEsle;
-        
-        /// <summary>
-        /// txtAbout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAbout;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

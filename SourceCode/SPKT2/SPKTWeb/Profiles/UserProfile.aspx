@@ -12,10 +12,11 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="mainCenter" runat="server">
 <div>
+    
     <div>
     <asp:Panel ID="pnlAlert" runat="server">
     </asp:Panel>
-</div>
+    </div>
 </div>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="mainRight" runat="server">
