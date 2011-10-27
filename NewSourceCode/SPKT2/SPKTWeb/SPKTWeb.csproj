@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit">
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\code\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -404,6 +405,7 @@
     <Compile Include="Image\ProfileAvatar.aspx.designer.cs">
       <DependentUpon>ProfileAvatar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Interface\IMXH1Master.cs" />
     <Compile Include="MXH1.Master.cs">
       <DependentUpon>MXH1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -411,6 +413,7 @@
     <Compile Include="MXH1.Master.designer.cs">
       <DependentUpon>MXH1.Master</DependentUpon>
     </Compile>
+    <Compile Include="Presenter\MXH1MasterPresenter.cs" />
     <Compile Include="Profiles\UploadAvatar.aspx.cs">
       <DependentUpon>UploadAvatar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -32,3 +32,30 @@ D:\New folder\SPKT2\SPKTWeb\bin\SPKTCore.pdb
 D:\New folder\SPKT2\SPKTWeb\obj\Debug\ResolveAssemblyReference.cache
 D:\New folder\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.dll
 D:\New folder\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.pdb
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\SPKTWeb.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\SPKTWeb.pdb
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\AjaxControlToolkit.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\SPKTCore.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\StructureMap.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\SPKTCore.pdb
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\AjaxControlToolkit.pdb
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\StructureMap.xml
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\ar\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\cs\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\de\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\es\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\fr\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\he\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\hi\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\it\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\ja\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\ko\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\nl\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\pt\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\ru\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\obj\Debug\ResolveAssemblyReference.cache
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.dll
+D:\HK1-2011-2012\TieuLuan\MangXaHoi\NewSourceCode\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.pdb

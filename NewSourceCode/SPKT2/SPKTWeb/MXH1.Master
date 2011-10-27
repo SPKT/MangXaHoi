@@ -83,8 +83,16 @@
             height: 29px;
             width: 60%;
         }
-
-
+        .main
+        {
+            float:right;
+            width:80%;
+        }
+        .mainleft
+        {
+            float:left;
+            width:20%;
+        }
     </style>
     
    
@@ -94,7 +102,7 @@
 <form id="form1" runat="server">
 	<div style=" width: 80%;margin-left: 10%;height: 77px; background-image:url('/Image/bn2.jpg'); background-repeat:repeat; background-color: #000066;">
 		&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="lb_Login" runat="server" ForeColor="White" Text="[LoginChaoban]"></asp:Label>	
+        <asp:Label ID="lblUserName" runat="server" ForeColor="White" Text="[LoginChaoban]"></asp:Label>	
 	</div>
 	<div style=" width: 80%;margin-left: 10%; height: 19px; background-image: url('/Image/block_topbg.gif'); background-repeat: repeat;">
         <asp:Label ID="Label1" runat="server" Text="  "></asp:Label>
@@ -142,12 +150,13 @@
             </tr>
             </table>
     </div>
-	<div style=" width: 80%; height:auto;margin-left: 10%;  background-color: #FFFFFF;  margin-top: 0px;">
+	<div style=" width: 80%; height:auto;margin-left: 10%;  background-color: #FFFFFF;  margin-top: 0px;" >
 		
 	    <asp:ContentPlaceHolder ID="Main" runat="server">
         </asp:ContentPlaceHolder>	
 		
 	</div>
+
 	<div style=" width: 80%;margin-left: 10%; height: 42px; background-image: url('/Image/content_topbg.gif'); background-repeat: repeat;">
 		
 	</div>

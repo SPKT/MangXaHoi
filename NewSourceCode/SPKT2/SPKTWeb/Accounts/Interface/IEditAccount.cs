@@ -9,5 +9,8 @@ namespace SPKTWeb.Accounts.Interface
     {
         void ShowMessage(string Message);
         void LoadCurrentInformation(SPKTCore.Core.Domain.Account account);
+        void ShowErrorSavePass(string Message);
+
+        void ShowErrorSaveEmail(string Message);
     }
 }
