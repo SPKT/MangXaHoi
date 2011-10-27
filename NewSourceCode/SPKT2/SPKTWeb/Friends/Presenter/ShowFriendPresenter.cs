@@ -11,6 +11,7 @@ using SPKTCore.Core.DataAccess;
 using SPKTWeb.Friends.Interface;
 using SPKTCore.Core.Impl;
 using StructureMap;
+using SPKTCore.Core.Domain;
 
 namespace SPKTWeb.Friends.Presenter
 {
@@ -19,10 +20,12 @@ namespace SPKTWeb.Friends.Presenter
         private IShowFriend _view;
         private IFriendRepository _friendRepository;
         private IUserSession _userSession;
+        private FriendService _friendService;
         public ShowFriendPresenter()
         {
             _friendRepository = new SPKTCore.Core.DataAccess.Impl.FriendRepository();
             _userSession = new SPKTCore.Core.Impl.UserSession();
+            _friendService = new FriendService();
         }
         public void Init(IShowFriend view)
         {
@@ -32,10 +35,11 @@ namespace SPKTWeb.Friends.Presenter
                 LoadFriend();
             }
         }
-
+        
         public void LoadFriend()
         {
-            _view.LoadFriend(_friendRepository.GetFriendsAccountsByAccountID(_userSession.CurrentUser.AccountID));
+            //_view.LoadFriend(_friendRepository.GetFriendsAccountsByAccountID(_userSession.CurrentUser.AccountID));
+            _view.LoadFriend(_friendService.SearchFriend(_userSession.CurrentUser));
         }
     }
 }

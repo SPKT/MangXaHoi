@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SPKTWeb.Friends {
+namespace SPKTWeb.Friends.UserControl {
     
     
-    public partial class FriendProfile {
+    public partial class FriendDisplay {
         
         /// <summary>
         /// imgAvatar control.
@@ -22,22 +22,13 @@ namespace SPKTWeb.Friends {
         protected global::System.Web.UI.WebControls.Image imgAvatar;
         
         /// <summary>
-        /// lblName control.
+        /// LinkButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lblName;
-        
-        /// <summary>
-        /// lblCreateDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreateDate;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
         /// lblFriendID control.
@@ -47,23 +38,5 @@ namespace SPKTWeb.Friends {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFriendID;
-        
-        /// <summary>
-        /// btn_add_de control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_add_de;
-        
-        /// <summary>
-        /// btn_de control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_de;
     }
 }

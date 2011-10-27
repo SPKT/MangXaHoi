@@ -15,13 +15,14 @@ namespace SPKTCore.Core.Impl
         private IFriendRepository _friendRepository;
         private IAccountRepository _accountRepository;
         private IWebContext _webContext;
-
+        private IUserSession _userSession;
         public FriendService()
         {
             _accountRepository = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
             _webContext = new SPKTCore.Core.Impl.WebContext();
             _friendInvitationRepository = new SPKTCore.Core.DataAccess.Impl.FriendInvitationRepository();
             _friendRepository = new SPKTCore.Core.DataAccess.Impl.FriendRepository();
+            _userSession = new SPKTCore.Core.Impl.UserSession();
         }
         public bool IsFriend(Account account, Account accountBeingViewed)
         {
@@ -31,7 +32,7 @@ namespace SPKTCore.Core.Impl
             if (accountBeingViewed == null)
                 return false;
 
-            if (account.AccountID == accountBeingViewed.AccountID)
+            if (account.AccountID == accountBeingViewed.AccountID && account.AccountID!=_userSession.CurrentUser.AccountID)
                 return true;
             else
             {
@@ -57,6 +58,17 @@ namespace SPKTCore.Core.Impl
             List<Friend> l=_friendRepository.GetFriendsByAccountID(account.AccountID);
             int dem = l.Count();
             return dem;
+        }
+       public List<Account> SearchFriend(Account account)
+        {
+           SPKTDataContext dc=new SPKTDataContext();
+            List<Account> list = new List<Account>();
+            foreach (Account a in dc.Accounts)
+            {
+                if (IsFriend(a, account) == true || IsFriend(account, a) == true)
+                    list.Add(a);
+            }
+            return list;
         }
     }
 }

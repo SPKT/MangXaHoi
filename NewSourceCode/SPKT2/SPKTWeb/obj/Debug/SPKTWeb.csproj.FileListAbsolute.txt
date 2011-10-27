@@ -32,3 +32,10 @@ D:\New folder\SPKT2\SPKTWeb\bin\SPKTCore.pdb
 D:\New folder\SPKT2\SPKTWeb\obj\Debug\ResolveAssemblyReference.cache
 D:\New folder\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.dll
 D:\New folder\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.pdb
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTWeb\bin\SPKTWeb.dll
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTWeb\bin\SPKTWeb.pdb
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTWeb\bin\SPKTCore.dll
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTWeb\bin\SPKTCore.pdb
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTWeb\obj\Debug\ResolveAssemblyReference.cache
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.dll
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTWeb\obj\Debug\SPKTWeb.pdb

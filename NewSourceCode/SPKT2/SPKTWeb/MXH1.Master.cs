@@ -13,15 +13,21 @@ namespace MXH
         Redirector _redirector;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            _redirector = new Redirector();
         }
 
         protected void bt_TimKiem_Click(object sender, EventArgs e)
         {
-            _redirector = new Redirector();
+            
             _redirector.GotoSearch(asbCity.Text);
         }
-
-        
+        protected void lbt_DangNhap_Click(object sender, EventArgs e)
+        {
+            _redirector.GoToAccountLoginPage();
+        }
+        protected void lbt_DangKy_Click(object sender, EventArgs e)
+        {
+            _redirector.GoToAccountRegisterPage();
+        }
     }
 }

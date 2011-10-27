@@ -1,5 +1,6 @@
 ﻿* {
     margin:0;
+    height: 20px;
 }
 
 body {
@@ -29,9 +30,8 @@ body {
 
 #main_left {
     float:left;
-    width:250px;
-    height:600px;
-  
+    width:20%;
+    height:100%;
 }
         .banner
         {
@@ -65,28 +65,27 @@ body {
         }
 #main_center
 {
-    width:600px;
-    height:600px;
+    width:79.5%;
     float:left;
-
+    height:100%;
 }
-
+#thanh
+{
+    width:0.5%;
+    float:left;
+    height:100%;
+}
 #main_leftUnder {
     width:inherit;
-    height:50%;
 
 }
 #main_leftAbove {
-    width:inherit;
-
-    height:50%
-   
+    width:inherit; 
+    height:1235%; 
 }
 #main_right {
     float:right;
-    width:250px;
-    height:600px;
-
+    width:0px;
 }
 
 

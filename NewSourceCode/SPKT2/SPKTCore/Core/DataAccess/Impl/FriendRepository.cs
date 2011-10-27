@@ -6,6 +6,7 @@ using StructureMap;
 using SPKTCore.Core.Domain;
 using SPKTCore.Core.DataAccess.Impl;
 using SPKTCore.Core.DataAccess;
+using SPKTCore.Core.Impl;
 
 namespace SPKTCore.Core.DataAccess.Impl
 {
@@ -30,17 +31,25 @@ namespace SPKTCore.Core.DataAccess.Impl
             return result;
         }
 
-        public List<Friend> GetFriendsByAccountID(Int32 AccountID)
+        public List<Friend>GetFriendsByAccountID(Int32 AccountID)
         {
             List<Friend> result = new List<Friend>();
             using (SPKTDataContext dc = conn.GetContext())
             {
                 IEnumerable<Friend> friends = (from f in dc.Friends
-                                               where f.AccountID == AccountID &&
-                                               f.MyFriendAccountID != AccountID
-                                               select f).Distinct();
+                                               where f.AccountID == AccountID && f.MyFriendAccountID != AccountID 
+                                              select f).Distinct();
                 result = friends.ToList();
-
+                //IEnumerable<Friend> fe = (from f in dc.Friends
+                //             where f.MyFriendAccountID == AccountID &&
+                //             f.AccountID != AccountID
+                //             select f).Distinct();
+                //result = fe.ToList();
+                //foreach (Friend i in fe)
+                //{
+                //    result.Add(i);
+                //}
+                //Friend s=new Friend();
                 var friends2 = (from f in dc.Friends
                                 where f.MyFriendAccountID == AccountID &&
                                 f.AccountID != AccountID
@@ -82,7 +91,7 @@ namespace SPKTCore.Core.DataAccess.Impl
             }
             return result;
         }
-
+        
         public void SaveFriend(Friend friend)
         {
             using (SPKTDataContext dc = conn.GetContext())

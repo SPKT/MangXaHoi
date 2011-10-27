@@ -46,7 +46,7 @@ namespace SPKTWeb.Accounts
 
         public void LoadEmailAddressFromFriendInvitation(string Email)
         {
-            throw new NotImplementedException();
+            txtEmail.Text = Email;
         }
 
         protected void txtUserName_TextChanged(object sender, EventArgs e)

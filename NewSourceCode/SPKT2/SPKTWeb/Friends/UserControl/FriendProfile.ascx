@@ -1,19 +1,18 @@
 ﻿<%@ Import namespace="SPKTCore.Core.Domain"%>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FriendProfile.ascx.cs" Inherits="SPKTWeb.Friends.FriendProfile" %>
-<div style="border: 1px solid #9999FF; float:left; width: 654px; height: 87px;">
-    <div style="height:86px; float:left; width: 537px;">
+<div style="border: 1px solid #9999FF; float:left; width: 654px; height: 77px;">
+    <div style="height:75px; float:left; width: 537px;" align="left">
         <a href="~/Profiles/UserProfile.aspx?AccountID=<asp:Literal id='litAccountID' runat='server'></asp:Literal>">
-        <asp:Image style="padding:5px;" ImageAlign="Left" Width="82px" Height="76px" 
+        <asp:Image style="padding:5px;" ImageAlign="Left" Width="73px" Height="63px" 
             ID="imgAvatar" ImageUrl="~/Image/ProfileAvatar.aspx" 
             runat="server" /></a>
         <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:LinkButton ID="lblName" runat="server" Font-Bold="True" 
+            Font-Size="Large">LinkButton</asp:LinkButton>
+        <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Tên tài khoản:
-        <asp:Label ID="lblUsername" runat="server" Font-Bold="True" Font-Italic="True" 
-            ForeColor="Blue"></asp:Label><br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Tên đại diện:
-        <asp:Label ID="lblName" runat="server"></asp:Label> &nbsp; Ngày tạo: <asp:Label ID="lblCreateDate" runat="server"></asp:Label><br />
+        Ngày tạo: <asp:Label ID="lblCreateDate" runat="server"></asp:Label><br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="lblFriendID" runat="server" Visible="false"></asp:Label>
     </div>

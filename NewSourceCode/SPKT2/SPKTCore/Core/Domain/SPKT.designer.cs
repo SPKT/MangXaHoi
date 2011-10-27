@@ -253,12 +253,6 @@ namespace SPKTCore.Core.Domain
 		
 		private EntitySet<Alert> _Alerts;
 		
-		private EntitySet<Friend> _Friends;
-		
-		private EntitySet<Friend> _Friends1;
-		
-		private EntitySet<FriendInvitation> _FriendInvitations;
-		
 		private EntitySet<Profile> _Profiles;
 		
 		private EntitySet<StatusUpdate> _StatusUpdates;
@@ -291,9 +285,6 @@ namespace SPKTCore.Core.Domain
 		{
 			this._AccountPermissions = new EntitySet<AccountPermission>(new Action<AccountPermission>(this.attach_AccountPermissions), new Action<AccountPermission>(this.detach_AccountPermissions));
 			this._Alerts = new EntitySet<Alert>(new Action<Alert>(this.attach_Alerts), new Action<Alert>(this.detach_Alerts));
-			this._Friends = new EntitySet<Friend>(new Action<Friend>(this.attach_Friends), new Action<Friend>(this.detach_Friends));
-			this._Friends1 = new EntitySet<Friend>(new Action<Friend>(this.attach_Friends1), new Action<Friend>(this.detach_Friends1));
-			this._FriendInvitations = new EntitySet<FriendInvitation>(new Action<FriendInvitation>(this.attach_FriendInvitations), new Action<FriendInvitation>(this.detach_FriendInvitations));
 			this._Profiles = new EntitySet<Profile>(new Action<Profile>(this.attach_Profiles), new Action<Profile>(this.detach_Profiles));
 			this._StatusUpdates = new EntitySet<StatusUpdate>(new Action<StatusUpdate>(this.attach_StatusUpdates), new Action<StatusUpdate>(this.detach_StatusUpdates));
 			OnCreated();
@@ -505,45 +496,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Friend", Storage="_Friends", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<Friend> Friends
-		{
-			get
-			{
-				return this._Friends;
-			}
-			set
-			{
-				this._Friends.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Friend1", Storage="_Friends1", ThisKey="AccountID", OtherKey="MyFriendAccountID")]
-		public EntitySet<Friend> Friends1
-		{
-			get
-			{
-				return this._Friends1;
-			}
-			set
-			{
-				this._Friends1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_FriendInvitation", Storage="_FriendInvitations", ThisKey="AccountID", OtherKey="AccountID")]
-		public EntitySet<FriendInvitation> FriendInvitations
-		{
-			get
-			{
-				return this._FriendInvitations;
-			}
-			set
-			{
-				this._FriendInvitations.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Profile", Storage="_Profiles", ThisKey="AccountID", OtherKey="AccountID")]
 		public EntitySet<Profile> Profiles
 		{
@@ -609,42 +561,6 @@ namespace SPKTCore.Core.Domain
 		}
 		
 		private void detach_Alerts(Alert entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Friends(Friend entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Friends(Friend entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Friends1(Friend entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account1 = this;
-		}
-		
-		private void detach_Friends1(Friend entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account1 = null;
-		}
-		
-		private void attach_FriendInvitations(FriendInvitation entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_FriendInvitations(FriendInvitation entity)
 		{
 			this.SendPropertyChanging();
 			entity.Account = null;
@@ -1309,10 +1225,6 @@ namespace SPKTCore.Core.Domain
 		
 		private System.Data.Linq.Binary _Timestamp;
 		
-		private EntityRef<Account> _Account;
-		
-		private EntityRef<Account> _Account1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1331,8 +1243,6 @@ namespace SPKTCore.Core.Domain
 		
 		public Friend()
 		{
-			this._Account = default(EntityRef<Account>);
-			this._Account1 = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -1367,10 +1277,6 @@ namespace SPKTCore.Core.Domain
 			{
 				if ((this._AccountID != value))
 				{
-					if (this._Account.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnAccountIDChanging(value);
 					this.SendPropertyChanging();
 					this._AccountID = value;
@@ -1391,10 +1297,6 @@ namespace SPKTCore.Core.Domain
 			{
 				if ((this._MyFriendAccountID != value))
 				{
-					if (this._Account1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMyFriendAccountIDChanging(value);
 					this.SendPropertyChanging();
 					this._MyFriendAccountID = value;
@@ -1444,74 +1346,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Friend", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.Friends.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.Friends.Add(this);
-						this._AccountID = value.AccountID;
-					}
-					else
-					{
-						this._AccountID = default(int);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Friend1", Storage="_Account1", ThisKey="MyFriendAccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account1
-		{
-			get
-			{
-				return this._Account1.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account1.Entity;
-				if (((previousValue != value) 
-							|| (this._Account1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account1.Entity = null;
-						previousValue.Friends1.Remove(this);
-					}
-					this._Account1.Entity = value;
-					if ((value != null))
-					{
-						value.Friends1.Add(this);
-						this._MyFriendAccountID = value.AccountID;
-					}
-					else
-					{
-						this._MyFriendAccountID = default(int);
-					}
-					this.SendPropertyChanged("Account1");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1553,8 +1387,6 @@ namespace SPKTCore.Core.Domain
 		
 		private System.Data.Linq.Binary _Timestamp;
 		
-		private EntityRef<Account> _Account;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1577,7 +1409,6 @@ namespace SPKTCore.Core.Domain
 		
 		public FriendInvitation()
 		{
-			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -1612,10 +1443,6 @@ namespace SPKTCore.Core.Domain
 			{
 				if ((this._AccountID != value))
 				{
-					if (this._Account.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnAccountIDChanging(value);
 					this.SendPropertyChanging();
 					this._AccountID = value;
@@ -1721,40 +1548,6 @@ namespace SPKTCore.Core.Domain
 					this._Timestamp = value;
 					this.SendPropertyChanged("Timestamp");
 					this.OnTimestampChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_FriendInvitation", Storage="_Account", ThisKey="AccountID", OtherKey="AccountID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.FriendInvitations.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.FriendInvitations.Add(this);
-						this._AccountID = value.AccountID;
-					}
-					else
-					{
-						this._AccountID = default(int);
-					}
-					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -2100,8 +1893,6 @@ namespace SPKTCore.Core.Domain
 		
 		private EntityRef<Profile> _Profile;
 		
-		private EntityRef<ProfileAttributeType> _ProfileAttributeType;
-		
 		private EntityRef<VisibilityLevel> _VisibilityLevel;
 		
     #region Extensibility Method Definitions
@@ -2125,7 +1916,6 @@ namespace SPKTCore.Core.Domain
 		public PrivacyFlag()
 		{
 			this._Profile = default(EntityRef<Profile>);
-			this._ProfileAttributeType = default(EntityRef<ProfileAttributeType>);
 			this._VisibilityLevel = default(EntityRef<VisibilityLevel>);
 			OnCreated();
 		}
@@ -2185,10 +1975,6 @@ namespace SPKTCore.Core.Domain
 			{
 				if ((this._ProfileAttributeTypeID != value))
 				{
-					if (this._ProfileAttributeType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnProfileAttributeTypeIDChanging(value);
 					this.SendPropertyChanging();
 					this._ProfileAttributeTypeID = value;
@@ -2292,40 +2078,6 @@ namespace SPKTCore.Core.Domain
 						this._ProfileID = default(int);
 					}
 					this.SendPropertyChanged("Profile");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProfileAttributeType_PrivacyFlag", Storage="_ProfileAttributeType", ThisKey="ProfileAttributeTypeID", OtherKey="ProfileAttributeTypeID", IsForeignKey=true)]
-		public ProfileAttributeType ProfileAttributeType
-		{
-			get
-			{
-				return this._ProfileAttributeType.Entity;
-			}
-			set
-			{
-				ProfileAttributeType previousValue = this._ProfileAttributeType.Entity;
-				if (((previousValue != value) 
-							|| (this._ProfileAttributeType.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ProfileAttributeType.Entity = null;
-						previousValue.PrivacyFlags.Remove(this);
-					}
-					this._ProfileAttributeType.Entity = value;
-					if ((value != null))
-					{
-						value.PrivacyFlags.Add(this);
-						this._ProfileAttributeTypeID = value.ProfileAttributeTypeID;
-					}
-					else
-					{
-						this._ProfileAttributeTypeID = default(int);
-					}
-					this.SendPropertyChanged("ProfileAttributeType");
 				}
 			}
 		}
@@ -3197,8 +2949,6 @@ namespace SPKTCore.Core.Domain
 		
 		private int _SortOrder;
 		
-		private EntitySet<PrivacyFlag> _PrivacyFlags;
-		
 		private EntitySet<ProfileAttribute> _ProfileAttributes;
 		
     #region Extensibility Method Definitions
@@ -3215,7 +2965,6 @@ namespace SPKTCore.Core.Domain
 		
 		public ProfileAttributeType()
 		{
-			this._PrivacyFlags = new EntitySet<PrivacyFlag>(new Action<PrivacyFlag>(this.attach_PrivacyFlags), new Action<PrivacyFlag>(this.detach_PrivacyFlags));
 			this._ProfileAttributes = new EntitySet<ProfileAttribute>(new Action<ProfileAttribute>(this.attach_ProfileAttributes), new Action<ProfileAttribute>(this.detach_ProfileAttributes));
 			OnCreated();
 		}
@@ -3280,19 +3029,6 @@ namespace SPKTCore.Core.Domain
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProfileAttributeType_PrivacyFlag", Storage="_PrivacyFlags", ThisKey="ProfileAttributeTypeID", OtherKey="ProfileAttributeTypeID")]
-		public EntitySet<PrivacyFlag> PrivacyFlags
-		{
-			get
-			{
-				return this._PrivacyFlags;
-			}
-			set
-			{
-				this._PrivacyFlags.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProfileAttributeType_ProfileAttribute", Storage="_ProfileAttributes", ThisKey="ProfileAttributeTypeID", OtherKey="ProfileAttributeTypeID")]
 		public EntitySet<ProfileAttribute> ProfileAttributes
 		{
@@ -3324,18 +3060,6 @@ namespace SPKTCore.Core.Domain
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_PrivacyFlags(PrivacyFlag entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProfileAttributeType = this;
-		}
-		
-		private void detach_PrivacyFlags(PrivacyFlag entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProfileAttributeType = null;
 		}
 		
 		private void attach_ProfileAttributes(ProfileAttribute entity)

@@ -81,8 +81,8 @@ namespace SPKTWeb.Friends
 
 
 
-            lblName.Text = _ac.fullname(account.AccountID);
-            lblUsername.Text = account.UserName;
+            lblName.Text = account.UserName;
+            //lblUsername.Text = account.UserName;
             lblCreateDate.Text = account.CreateDate.ToString();
             //lblName.Text = account.Email;
             //lblCreateDate.Text = account.CreateDate.ToString();

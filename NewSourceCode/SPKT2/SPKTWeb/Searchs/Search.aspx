@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-<div class="divContainer">
+    <div class="divContainer">
         <div class="divContainerBox">
             <div class="divContainerTitle"><asp:Label ID="lblSearchTerm" runat="server"></asp:Label></div>
             <div class="divContainerRow" style="height:350px;">

@@ -61,7 +61,7 @@ namespace SPKTWeb.Image
             }
             else
             {
-                Response.Redirect("~/Images/ALIEN_01_01.jpg");
+                Response.Redirect("~/Image/ALIEN_01_01.jpg");
             }
         }
         public string GetGravatarURL()

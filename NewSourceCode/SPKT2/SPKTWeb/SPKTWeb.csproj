@@ -73,7 +73,9 @@
     <Content Include="Friends\ConfirmFriendshipRequest.aspx" />
     <Content Include="Friends\Invite.aspx" />
     <Content Include="Friends\ShowFriend.aspx" />
+    <Content Include="Friends\UserControl\FriendDisplay.ascx" />
     <Content Include="Friends\UserControl\FriendProfile.ascx" />
+    <Content Include="Friends\UserControl\InfoStatusNew.ascx" />
     <Content Include="Friends\UserControl\InviteFriends.ascx" />
     <Content Include="Friends\UserControl\ShowFriend.ascx" />
     <Content Include="Homes\Home.aspx" />
@@ -94,6 +96,7 @@
     <Content Include="Images\ALIEN_01_01.PNG" />
     <Content Include="Images\ALIEN_03_01.PNG" />
     <Content Include="Images\TENT_01_01.PNG" />
+    <Content Include="Image\12.png" />
     <Content Include="Image\ALIEN_01_01.jpg" />
     <Content Include="Image\ALIEN_01_01.PNG" />
     <Content Include="Image\bbl-body-bg.png" />
@@ -105,6 +108,8 @@
     <Content Include="Image\bn2.jpg" />
     <Content Include="Image\body-bg2.png" />
     <Content Include="Image\body-bg2_2.png" />
+    <Content Include="Image\body-bot-crv.jpg" />
+    <Content Include="Image\body-box-bot.jpg" />
     <Content Include="Image\body_bg.jpg" />
     <Content Include="Image\bt2.jpg" />
     <Content Include="Image\but_razd.gif" />
@@ -112,12 +117,16 @@
     <Content Include="Image\gray-grad.png" />
     <Content Include="Image\icon_close.gif" />
     <Content Include="Image\icon_friends.gif" />
+    <Content Include="Image\lft-nav-bot.jpg" />
+    <Content Include="Image\lft-nav-top.jpg" />
     <Content Include="Image\main_menu_bg.jpg" />
     <Content Include="Image\page_top_bkgr.gif" />
     <Content Include="Image\post_entry_bkgr.png" />
     <Content Include="Image\ProfileAvatar.aspx" />
     <Content Include="Image\search.png" />
     <Content Include="Image\searchbg.png" />
+    <Content Include="Image\tl1.png" />
+    <Content Include="Image\tl3.png" />
     <Content Include="js\cropper\cropper.css" />
     <Content Include="js\cropper\cropper.js" />
     <Content Include="js\cropper\cropper.uncompressed.js" />
@@ -357,12 +366,26 @@
     <Compile Include="Friends\ShowFriend.aspx.designer.cs">
       <DependentUpon>ShowFriend.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Friends\UserControl\FriendDisplay.ascx.cs">
+      <DependentUpon>FriendDisplay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\FriendDisplay.ascx.designer.cs">
+      <DependentUpon>FriendDisplay.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Friends\UserControl\FriendProfile.ascx.cs">
       <DependentUpon>FriendProfile.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Friends\UserControl\FriendProfile.ascx.designer.cs">
       <DependentUpon>FriendProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Friends\UserControl\InfoStatusNew.ascx.cs">
+      <DependentUpon>InfoStatusNew.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Friends\UserControl\InfoStatusNew.ascx.designer.cs">
+      <DependentUpon>InfoStatusNew.ascx</DependentUpon>
     </Compile>
     <Compile Include="Friends\UserControl\InviteFriends.ascx.cs">
       <DependentUpon>InviteFriends.ascx</DependentUpon>

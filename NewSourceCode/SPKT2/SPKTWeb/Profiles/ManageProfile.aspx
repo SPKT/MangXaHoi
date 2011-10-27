@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ManageProfile.aspx.cs" Inherits="SPKTWeb.Profiles.ManageProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH1.Master" AutoEventWireup="true" CodeBehind="ManageProfile.aspx.cs" Inherits="SPKTWeb.Profiles.ManageProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="mainLeft_above" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Left" runat="server">
     <div>
     <div>
     <img src="~/Image/ProfileAvatar.aspx" alt="test image" id="testImage" width="100" height="75" runat="server" />
@@ -15,10 +15,8 @@
     </div>
 </div>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="mainLeft_under" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="mainCenter" runat="server">
-<div>
+<asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
+<div style="height:auto">
     <div>
         <asp:Wizard EnableViewState="true" ID="Wizard1" runat="server" ActiveStepIndex="0" 
             BackColor="LemonChiffon" BorderStyle="Groove" BorderWidth="2px" 
@@ -32,7 +30,7 @@
                     <a style="height: 65px; width: 370px; color: #FF0000; font-size: x-large; font-weight: bold;"> Quản lý thông tin cá nhân</a>
                     <br />
     
-                    <table border="0"  height:243px;" style="width: 602px">
+                    <table border="0"  style="width: 602px; height:auto">
                     <a style="height: 65px; width: 370px; color:Green; font-size:large;font-weight: bold;">Thông tin tài khoản</a>
                     <tr>
                         <td align="Right" 
@@ -99,11 +97,4 @@
             </div>
 </div>
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="mainRight" runat="server">
-</asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="mainUnder" runat="server">
-<div>
-        
-</div>
 
-</asp:Content>

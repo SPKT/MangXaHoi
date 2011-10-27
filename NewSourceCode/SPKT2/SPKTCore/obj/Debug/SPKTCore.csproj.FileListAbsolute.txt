@@ -13,3 +13,9 @@ D:\New folder\SPKT2\SPKTCore\bin\Debug\SPKTCore.pdb
 D:\New folder\SPKT2\SPKTCore\obj\Debug\ResolveAssemblyReference.cache
 D:\New folder\SPKT2\SPKTCore\obj\Debug\SPKTCore.dll
 D:\New folder\SPKT2\SPKTCore\obj\Debug\SPKTCore.pdb
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTCore\bin\Debug\SPKTCore.dll.config
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTCore\bin\Debug\SPKTCore.dll
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTCore\bin\Debug\SPKTCore.pdb
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTCore\obj\Debug\ResolveAssemblyReference.cache
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTCore\obj\Debug\SPKTCore.dll
+F:\Thuy_TLCN\NewSourceCode\SPKT2\SPKTCore\obj\Debug\SPKTCore.pdb

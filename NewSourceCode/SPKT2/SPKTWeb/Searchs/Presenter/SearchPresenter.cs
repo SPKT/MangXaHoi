@@ -24,8 +24,6 @@ namespace SPKTWeb.Searchs.Presenter
         public void Init(ISearch view)
         {
             _view = view;
-            //_accountRepository = ObjectFactory.GetInstance<IAccountRepository>();
-            //_redirector = ObjectFactory.GetInstance<IRedirector>();
             _accountRepository = new SPKTCore.Core.DataAccess.Impl.AccountRepository();
             _profileRepository = new SPKTCore.Core.DataAccess.Impl.ProfileRepository();
             _redirector = new SPKTCore.Core.Impl.Redirector();
