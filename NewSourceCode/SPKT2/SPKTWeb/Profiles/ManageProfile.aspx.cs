@@ -89,13 +89,11 @@ namespace SPKTWeb.Profiles
                 System.Web.UI.HtmlControls.HtmlGenericControl brTab = new System.Web.UI.HtmlControls.HtmlGenericControl("br");
                 Label lbl = new Label();
                 lbl.Width = 150;
-                lbl.Height = 15;
                 lbl.ForeColor = System.Drawing.Color.Blue;
                 lbl.ID = "lbl" + type.ProfileAttributeTypeID.ToString();
                 lbl.Text = type.Type;
                 TextBox txt = new TextBox();
                 txt.Width = 150;
-                txt.Height = 15;
                 lbl.ForeColor = System.Drawing.Color.CornflowerBlue;
                 ProfileAttribute attribute = _presenter.GetProfileAttributeByProfileIDAndType(profile,type);
                 if(attribute==null)

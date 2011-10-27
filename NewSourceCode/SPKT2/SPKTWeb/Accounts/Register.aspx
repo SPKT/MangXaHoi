@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="SPKTWeb.Accounts.Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MXH1.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="SPKTWeb.Accounts.Register" %>
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 
@@ -8,17 +8,23 @@
         {
             height: 23px;
         }
+        .sign-in {
+            float: right;
+                }
+        .signin-box, .accountchooser-box {
+            background: none repeat scroll 0 0 #F5F5F5;
+            border: 1px solid #E5E5E5;
+
+            width:auto;
+            height:auto;
+}
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="mainLeft_above" runat="server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="mainLeft_under" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="mainCenter" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="Main" runat="server">
                         <asp:ScriptManager ID="ScriptManager1" runat="server">
                         </asp:ScriptManager>
-     <table border="0"  height:243px;" style="width: 602px">
-                 <a class="divContainerTitle" style="height: 65px; width: 370px; color: #FF0000; font-size: x-large; font-weight: bold;">Đăng Ký Tài Khoản</a><br />
+     <table class="signin-box" border="0">
+        <div class="divContainerTitle" style="background-image: url('../Image/block_topbg.gif'); color: #FF0000; font-size: x-large; font-weight: bold;">Đăng Ký Tài Khoản</div> <br />
                    
                     <tr>
                         <td align="right" 
@@ -29,9 +35,9 @@
                         <td align="left" class="style108">
                          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                        <ContentTemplate>
-                            <asp:TextBox ID="txtUserName" AutoPostBack="true" runat="server" 
-                                BorderStyle="Inset" BorderWidth="2px" OnTextChanged="txtUserName_TextChanged" 
-                                Height="22px" Width="170px" CausesValidation="True"></asp:TextBox>
+                            <asp:TextBox ID="txtUserName" AutoPostBack="true" runat="server"  
+                                OnTextChanged="txtUserName_TextChanged" 
+                               CausesValidation="True"></asp:TextBox>
                          
                             <asp:Label ID="lblCheckUsername" runat="server"></asp:Label>
                              <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
@@ -51,11 +57,11 @@
                     <tr>
                         <td align="right" 
                             style="color: #0000FF; font-size: large;" class="style106">
-                            Mật khẩu::</td>
+                            Mật khẩu:</td>
                         <td align="left" class="style109">
                            <asp:TextBox ID="txtPassword" runat="server" 
-                                BorderStyle="Inset" BorderWidth="2px" 
-                                Height="21px"  Width="171px" TextMode="Password"></asp:TextBox>
+                                
+                               TextMode="Password"></asp:TextBox>
                             <asp:Label ID="lblMessageLegthPass" runat="server"></asp:Label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                 ControlToValidate="txtPassword" Display="Dynamic" 
@@ -71,8 +77,8 @@
                             Nhắc lại Mật khẩu:</td>
                         <td align="left" class="style109">
                             <asp:TextBox ID="txtPasswordPre" runat="server" 
-                                BorderStyle="Inset" BorderWidth="2px" 
-                                Height="21px" TextMode="Password" Width="171px" ></asp:TextBox>
+                                
+                              TextMode="Password" ></asp:TextBox>
                             <asp:PasswordStrength ID="txtPassword_PasswordStrength" runat="server" 
                                 Enabled="True" TargetControlID="txtPassword">
                             </asp:PasswordStrength>
@@ -91,8 +97,8 @@
                             style="color: #0000FF; font-size: large;" class="style104">
                             Email:</td>
                         <td align="left" class="style104">
-                            <asp:TextBox ID="txtEmail" runat="server" BorderStyle="Inset" BorderWidth="2px" 
-                                Height="21px" Width="170px"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" 
+                              ></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                                 ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Chưa nhập email"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
@@ -116,8 +122,8 @@
                             style="color: #0000FF; font-size: large;" class="style104">
                             Captcha:</td>
                         <td align="left" class="style104">
-                            <asp:TextBox ID="txtCaptCha" runat="server" BorderStyle="Inset" BorderWidth="2px" 
-                                Height="21px" Width="170px"></asp:TextBox>
+                            <asp:TextBox ID="txtCaptCha" runat="server" 
+                             ></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                 ControlToValidate="txtCaptCha" Display="Dynamic" 
                                 ErrorMessage="Chưa nhập Captcha"></asp:RequiredFieldValidator>
@@ -168,6 +174,4 @@
                         </td>
                     </tr>
                 </table>
-</asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="mainRight" runat="server">
 </asp:Content>

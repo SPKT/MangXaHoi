@@ -86,6 +86,7 @@
             height: 29px;
             width: 60%;
         }
+<<<<<<< HEAD
         .left
         {
             width: 20%;
@@ -96,17 +97,36 @@
             height:80%;
         }
         
+=======
+        .main
+        {
+            float:right;
+            width:80%;
+        }
+        .mainleft
+        {
+            float:left;
+            width:20%;
+        }
+>>>>>>> 74349b0b329f92be16c92eafca08b233a2499789
     </style>
     
    
 </head>
 <body style="margin: 0;background-image:url('/Image/body-bg2.png'); background-repeat:repeat">
 
+<<<<<<< HEAD
 <form id="form1" runat="server" style="height:660px">
 	<div style=" width: 80%;margin-left: 10%;height: 77px; background-image:url('/Image/bn2.jpg'); background-repeat:repeat; background-color: #000066;" 
         align="left">
 		&nbsp;&nbsp;
         <asp:Label ID="lb_Login" runat="server" ForeColor="White" Text="[LoginChaoban]"></asp:Label>	
+=======
+<form id="form1" runat="server">
+	<div style=" width: 80%;margin-left: 10%;height: 77px; background-image:url('/Image/bn2.jpg'); background-repeat:repeat; background-color: #000066;">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblUserName" runat="server" ForeColor="White" Text="[LoginChaoban]"></asp:Label>	
+>>>>>>> 74349b0b329f92be16c92eafca08b233a2499789
 	</div>
 	<div style=" width: 80%;margin-left: 10%; height: 19px; background-image: url('/Image/block_topbg.gif'); background-repeat: repeat;" 
         align="left">
@@ -155,6 +175,7 @@
             </tr>
             </table>
     </div>
+<<<<<<< HEAD
 	<div style=" width: 80%; height:402px; margin-left: 10%;  background-color: #FFFFFF;  margin-top: 0px;">
             <div id="main_left">
                &nbsp;<asp:ContentPlaceHolder id="Left" runat="server">
@@ -168,6 +189,16 @@
             </div>
 	</div>
 	<div style=" width: 80%;margin-left: 10%; height: 42px; background-image: url('/Image/content_topbg.gif'); background-repeat: repeat; background-color: #FFCCCC;">
+=======
+	<div style=" width: 80%; height:auto;margin-left: 10%;  background-color: #FFFFFF;  margin-top: 0px;" >
+		
+	    <asp:ContentPlaceHolder ID="Main" runat="server">
+        </asp:ContentPlaceHolder>	
+		
+	</div>
+
+	<div style=" width: 80%;margin-left: 10%; height: 42px; background-image: url('/Image/content_topbg.gif'); background-repeat: repeat;">
+>>>>>>> 74349b0b329f92be16c92eafca08b233a2499789
 		
 	</div>
 	

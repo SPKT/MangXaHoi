@@ -9,7 +9,7 @@ namespace SPKTCore.Core
     {
         public const string UsernameToVerifyQueryStringName = "a";
 
-
+  
         public const string VerificationEmailSubject = "Xác nhận email";
         public const string RecoverPassword = "Phục hồi mật khẩu";
 
